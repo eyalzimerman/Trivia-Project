@@ -16,8 +16,8 @@ module.exports = {
   },
   production: {
     username: "root",
-    password: null,
-    database: "database_production",
+    password: process.env.SQL_PASSWORD,
+    database: process.env.DB_NAME,
     host: "127.0.0.1",
     dialect: "mysql",
   },
