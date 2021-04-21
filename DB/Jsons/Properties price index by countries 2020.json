@@ -1,0 +1,418 @@
+[
+	{
+		"Country": "Venezuela",
+		"Price To Income Ratio": 133.29
+	},
+	{
+		"Country": "Syria",
+		"Price To Income Ratio": 60.83
+	},
+	{
+		"Country": "Hong Kong",
+		"Price To Income Ratio": 47.46
+	},
+	{
+		"Country": "Cambodia",
+		"Price To Income Ratio": 42.33
+	},
+	{
+		"Country": "Kenya",
+		"Price To Income Ratio": 31.63
+	},
+	{
+		"Country": "Sri Lanka",
+		"Price To Income Ratio": 31.14
+	},
+	{
+		"Country": "China",
+		"Price To Income Ratio": 29.06
+	},
+	{
+		"Country": "Iran",
+		"Price To Income Ratio": 25.11
+	},
+	{
+		"Country": "Nepal",
+		"Price To Income Ratio": 24.74
+	},
+	{
+		"Country": "Philippines",
+		"Price To Income Ratio": 24.6
+	},
+	{
+		"Country": "Argentina",
+		"Price To Income Ratio": 24.53
+	},
+	{
+		"Country": "Taiwan",
+		"Price To Income Ratio": 23.69
+	},
+	{
+		"Country": "Singapore",
+		"Price To Income Ratio": 22.31
+	},
+	{
+		"Country": "Thailand",
+		"Price To Income Ratio": 22.26
+	},
+	{
+		"Country": "Vietnam",
+		"Price To Income Ratio": 21.36
+	},
+	{
+		"Country": "Colombia",
+		"Price To Income Ratio": 19.65
+	},
+	{
+		"Country": "Serbia",
+		"Price To Income Ratio": 18.94
+	},
+	{
+		"Country": "Indonesia",
+		"Price To Income Ratio": 18.88
+	},
+	{
+		"Country": "Algeria",
+		"Price To Income Ratio": 17.81
+	},
+	{
+		"Country": "South Korea",
+		"Price To Income Ratio": 17.37
+	},
+	{
+		"Country": "Armenia",
+		"Price To Income Ratio": 16.62
+	},
+	{
+		"Country": "Brazil",
+		"Price To Income Ratio": 16.41
+	},
+	{
+		"Country": "Uruguay",
+		"Price To Income Ratio": 16.34
+	},
+	{
+		"Country": "Azerbaijan",
+		"Price To Income Ratio": 16.24
+	},
+	{
+		"Country": "Albania",
+		"Price To Income Ratio": 15.49
+	},
+	{
+		"Country": "Czech Republic",
+		"Price To Income Ratio": 15.42
+	},
+	{
+		"Country": "Uzbekistan",
+		"Price To Income Ratio": 15.31
+	},
+	{
+		"Country": "Peru",
+		"Price To Income Ratio": 14.95
+	},
+	{
+		"Country": "Chile",
+		"Price To Income Ratio": 14.93
+	},
+	{
+		"Country": "Hungary",
+		"Price To Income Ratio": 14.77
+	},
+	{
+		"Country": "Belarus",
+		"Price To Income Ratio": 14.65
+	},
+	{
+		"Country": "Georgia",
+		"Price To Income Ratio": 14.21
+	},
+	{
+		"Country": "Morocco",
+		"Price To Income Ratio": 14.18
+	},
+	{
+		"Country": "Croatia",
+		"Price To Income Ratio": 13.73
+	},
+	{
+		"Country": "Dominican Republic",
+		"Price To Income Ratio": 13.48
+	},
+	{
+		"Country": "Montenegro",
+		"Price To Income Ratio": 13.23
+	},
+	{
+		"Country": "Lebanon",
+		"Price To Income Ratio": 13.23
+	},
+	{
+		"Country": "Bangladesh",
+		"Price To Income Ratio": 13.1
+	},
+	{
+		"Country": "France",
+		"Price To Income Ratio": 13.04
+	},
+	{
+		"Country": "Egypt",
+		"Price To Income Ratio": 13.01
+	},
+	{
+		"Country": "Japan",
+		"Price To Income Ratio": 13
+	},
+	{
+		"Country": "Israel",
+		"Price To Income Ratio": 12.83
+	},
+	{
+		"Country": "Ecuador",
+		"Price To Income Ratio": 12.7
+	},
+	{
+		"Country": "Portugal",
+		"Price To Income Ratio": 12.7
+	},
+	{
+		"Country": "Panama",
+		"Price To Income Ratio": 12.6
+	},
+	{
+		"Country": "North Macedonia",
+		"Price To Income Ratio": 12.6
+	},
+	{
+		"Country": "Bosnia And Herzegovina",
+		"Price To Income Ratio": 12.58
+	},
+	{
+		"Country": "Malta",
+		"Price To Income Ratio": 12.32
+	},
+	{
+		"Country": "Kuwait",
+		"Price To Income Ratio": 12.28
+	},
+	{
+		"Country": "Ukraine",
+		"Price To Income Ratio": 12.23
+	},
+	{
+		"Country": "Pakistan",
+		"Price To Income Ratio": 11.98
+	},
+	{
+		"Country": "Luxembourg",
+		"Price To Income Ratio": 11.61
+	},
+	{
+		"Country": "Poland",
+		"Price To Income Ratio": 11.38
+	},
+	{
+		"Country": "India",
+		"Price To Income Ratio": 11.38
+	},
+	{
+		"Country": "Romania",
+		"Price To Income Ratio": 11.33
+	},
+	{
+		"Country": "Lithuania",
+		"Price To Income Ratio": 10.9
+	},
+	{
+		"Country": "Austria",
+		"Price To Income Ratio": 10.88
+	},
+	{
+		"Country": "Kazakhstan",
+		"Price To Income Ratio": 10.86
+	},
+	{
+		"Country": "Russia",
+		"Price To Income Ratio": 10.77
+	},
+	{
+		"Country": "Honduras",
+		"Price To Income Ratio": 10.77
+	},
+	{
+		"Country": "Kosovo (Disputed Territory)",
+		"Price To Income Ratio": 10.67
+	},
+	{
+		"Country": "Mexico",
+		"Price To Income Ratio": 10.67
+	},
+	{
+		"Country": "Tunisia",
+		"Price To Income Ratio": 10.63
+	},
+	{
+		"Country": "Greece",
+		"Price To Income Ratio": 10.6
+	},
+	{
+		"Country": "Slovenia",
+		"Price To Income Ratio": 10.49
+	},
+	{
+		"Country": "Costa Rica",
+		"Price To Income Ratio": 10.31
+	},
+	{
+		"Country": "Slovakia",
+		"Price To Income Ratio": 10.25
+	},
+	{
+		"Country": "United Kingdom",
+		"Price To Income Ratio": 10.09
+	},
+	{
+		"Country": "Guatemala",
+		"Price To Income Ratio": 10.08
+	},
+	{
+		"Country": "Malaysia",
+		"Price To Income Ratio": 9.94
+	},
+	{
+		"Country": "Italy",
+		"Price To Income Ratio": 9.71
+	},
+	{
+		"Country": "Bolivia",
+		"Price To Income Ratio": 9.69
+	},
+	{
+		"Country": "Germany",
+		"Price To Income Ratio": 9.38
+	},
+	{
+		"Country": "Spain",
+		"Price To Income Ratio": 9.37
+	},
+	{
+		"Country": "Sweden",
+		"Price To Income Ratio": 9.27
+	},
+	{
+		"Country": "Iraq",
+		"Price To Income Ratio": 9.12
+	},
+	{
+		"Country": "Oman",
+		"Price To Income Ratio": 9.08
+	},
+	{
+		"Country": "Estonia",
+		"Price To Income Ratio": 9.06
+	},
+	{
+		"Country": "Latvia",
+		"Price To Income Ratio": 8.85
+	},
+	{
+		"Country": "Norway",
+		"Price To Income Ratio": 8.77
+	},
+	{
+		"Country": "Switzerland",
+		"Price To Income Ratio": 8.68
+	},
+	{
+		"Country": "Bahrain",
+		"Price To Income Ratio": 8.63
+	},
+	{
+		"Country": "New Zealand",
+		"Price To Income Ratio": 8.52
+	},
+	{
+		"Country": "Bulgaria",
+		"Price To Income Ratio": 8.52
+	},
+	{
+		"Country": "Jordan",
+		"Price To Income Ratio": 8.42
+	},
+	{
+		"Country": "Finland",
+		"Price To Income Ratio": 8.35
+	},
+	{
+		"Country": "Cyprus",
+		"Price To Income Ratio": 8.2
+	},
+	{
+		"Country": "Canada",
+		"Price To Income Ratio": 7.97
+	},
+	{
+		"Country": "Turkey",
+		"Price To Income Ratio": 7.81
+	},
+	{
+		"Country": "Australia",
+		"Price To Income Ratio": 7.52
+	},
+	{
+		"Country": "Netherlands",
+		"Price To Income Ratio": 7.51
+	},
+	{
+		"Country": "Ireland",
+		"Price To Income Ratio": 7.49
+	},
+	{
+		"Country": "Denmark",
+		"Price To Income Ratio": 7.45
+	},
+	{
+		"Country": "Belgium",
+		"Price To Income Ratio": 6.91
+	},
+	{
+		"Country": "Iceland",
+		"Price To Income Ratio": 6.74
+	},
+	{
+		"Country": "Trinidad And Tobago",
+		"Price To Income Ratio": 6.1
+	},
+	{
+		"Country": "Qatar",
+		"Price To Income Ratio": 5.82
+	},
+	{
+		"Country": "United Arab Emirates",
+		"Price To Income Ratio": 5.29
+	},
+	{
+		"Country": "Namibia",
+		"Price To Income Ratio": 5.15
+	},
+	{
+		"Country": "Palestine",
+		"Price To Income Ratio": 4.38
+	},
+	{
+		"Country": "South Africa",
+		"Price To Income Ratio": 3.93
+	},
+	{
+		"Country": "Puerto Rico",
+		"Price To Income Ratio": 3.53
+	},
+	{
+		"Country": "United States",
+		"Price To Income Ratio": 3.52
+	},
+	{
+		"Country": "Saudi Arabia",
+		"Price To Income Ratio": 2.79
+	}
+]

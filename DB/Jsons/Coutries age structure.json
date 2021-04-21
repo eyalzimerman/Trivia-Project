@@ -1,0 +1,1148 @@
+[
+	{
+		"Country": "Japan",
+		"Age 0 to 14 Years": 12.9,
+		"Age 15 to 64 Years": 60.1,
+		"Age above 65 Years": 27
+	},
+	{
+		"Country": "Italy",
+		"Age 0 to 14 Years": 13.5,
+		"Age 15 to 64 Years": 63.5,
+		"Age above 65 Years": 23
+	},
+	{
+		"Country": "Portugal",
+		"Age 0 to 14 Years": 13.6,
+		"Age 15 to 64 Years": 64.9,
+		"Age above 65 Years": 22
+	},
+	{
+		"Country": "Germany",
+		"Age 0 to 14 Years": 13.1,
+		"Age 15 to 64 Years": 65.5,
+		"Age above 65 Years": 22
+	},
+	{
+		"Country": "Finland",
+		"Age 0 to 14 Years": 16.4,
+		"Age 15 to 64 Years": 62.4,
+		"Age above 65 Years": 21
+	},
+	{
+		"Country": "Bulgaria",
+		"Age 0 to 14 Years": 14.2,
+		"Age 15 to 64 Years": 65.0,
+		"Age above 65 Years": 21
+	},
+	{
+		"Country": "Greece",
+		"Age 0 to 14 Years": 14.2,
+		"Age 15 to 64 Years": 65.4,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Sweden",
+		"Age 0 to 14 Years": 17.5,
+		"Age 15 to 64 Years": 62.5,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Latvia",
+		"Age 0 to 14 Years": 15.4,
+		"Age 15 to 64 Years": 64.8,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Denmark",
+		"Age 0 to 14 Years": 16.5,
+		"Age 15 to 64 Years": 63.8,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "France",
+		"Age 0 to 14 Years": 18.1,
+		"Age 15 to 64 Years": 62.2,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Croatia",
+		"Age 0 to 14 Years": 14.7,
+		"Age 15 to 64 Years": 65.6,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Estonia",
+		"Age 0 to 14 Years": 16.4,
+		"Age 15 to 64 Years": 64.2,
+		"Age above 65 Years": 20
+	},
+	{
+		"Country": "Malta",
+		"Age 0 to 14 Years": 14.4,
+		"Age 15 to 64 Years": 66.1,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Spain",
+		"Age 0 to 14 Years": 14.7,
+		"Age 15 to 64 Years": 65.9,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Austria",
+		"Age 0 to 14 Years": 14.1,
+		"Age 15 to 64 Years": 66.7,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Slovenia",
+		"Age 0 to 14 Years": 15.0,
+		"Age 15 to 64 Years": 66.0,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Czech Republic",
+		"Age 0 to 14 Years": 15.4,
+		"Age 15 to 64 Years": 65.6,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Lithuania",
+		"Age 0 to 14 Years": 14.8,
+		"Age 15 to 64 Years": 66.2,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Netherlands",
+		"Age 0 to 14 Years": 16.4,
+		"Age 15 to 64 Years": 64.8,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Hungary",
+		"Age 0 to 14 Years": 14.3,
+		"Age 15 to 64 Years": 67.1,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "US Virgin Islands (US)",
+		"Age 0 to 14 Years": 20.1,
+		"Age 15 to 64 Years": 61.3,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Belgium",
+		"Age 0 to 14 Years": 17.1,
+		"Age 15 to 64 Years": 64.3,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "United Kingdom",
+		"Age 0 to 14 Years": 17.7,
+		"Age 15 to 64 Years": 63.8,
+		"Age above 65 Years": 19
+	},
+	{
+		"Country": "Switzerland",
+		"Age 0 to 14 Years": 14.9,
+		"Age 15 to 64 Years": 66.7,
+		"Age above 65 Years": 18
+	},
+	{
+		"Country": "Romania",
+		"Age 0 to 14 Years": 15.3,
+		"Age 15 to 64 Years": 66.9,
+		"Age above 65 Years": 18
+	},
+	{
+		"Country": "Serbia",
+		"Age 0 to 14 Years": 16.5,
+		"Age 15 to 64 Years": 66.2,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Canada",
+		"Age 0 to 14 Years": 16.0,
+		"Age 15 to 64 Years": 67.0,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Norway",
+		"Age 0 to 14 Years": 17.8,
+		"Age 15 to 64 Years": 65.4,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Poland",
+		"Age 0 to 14 Years": 14.8,
+		"Age 15 to 64 Years": 68.4,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Bosnia and Herzegovina",
+		"Age 0 to 14 Years": 14.1,
+		"Age 15 to 64 Years": 69.3,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Ukraine",
+		"Age 0 to 14 Years": 15.5,
+		"Age 15 to 64 Years": 68.0,
+		"Age above 65 Years": 17
+	},
+	{
+		"Country": "Curaçao",
+		"Age 0 to 14 Years": 18.7,
+		"Age 15 to 64 Years": 64.9,
+		"Age above 65 Years": 16
+	},
+	{
+		"Country": "Hong Kong",
+		"Age 0 to 14 Years": 11.5,
+		"Age 15 to 64 Years": 72.2,
+		"Age above 65 Years": 16
+	},
+	{
+		"Country": "Australia",
+		"Age 0 to 14 Years": 19.0,
+		"Age 15 to 64 Years": 65.5,
+		"Age above 65 Years": 16
+	},
+	{
+		"Country": "United States",
+		"Age 0 to 14 Years": 18.9,
+		"Age 15 to 64 Years": 65.7,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "New Zealand",
+		"Age 0 to 14 Years": 19.8,
+		"Age 15 to 64 Years": 64.9,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Puerto Rico (US)",
+		"Age 0 to 14 Years": 17.9,
+		"Age 15 to 64 Years": 66.9,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Slovakia",
+		"Age 0 to 14 Years": 15.4,
+		"Age 15 to 64 Years": 69.6,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Barbados",
+		"Age 0 to 14 Years": 19.1,
+		"Age 15 to 64 Years": 66.0,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Georgia",
+		"Age 0 to 14 Years": 19.2,
+		"Age 15 to 64 Years": 66.0,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Belarus",
+		"Age 0 to 14 Years": 16.7,
+		"Age 15 to 64 Years": 68.5,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Montenegro",
+		"Age 0 to 14 Years": 18.1,
+		"Age 15 to 64 Years": 67.1,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Uruguay",
+		"Age 0 to 14 Years": 21.1,
+		"Age 15 to 64 Years": 64.3,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Cuba",
+		"Age 0 to 14 Years": 16.1,
+		"Age 15 to 64 Years": 69.2,
+		"Age above 65 Years": 15
+	},
+	{
+		"Country": "Iceland",
+		"Age 0 to 14 Years": 20.1,
+		"Age 15 to 64 Years": 65.5,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "Luxembourg",
+		"Age 0 to 14 Years": 16.5,
+		"Age 15 to 64 Years": 69.2,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "Russia",
+		"Age 0 to 14 Years": 17.6,
+		"Age 15 to 64 Years": 68.2,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "South Korea",
+		"Age 0 to 14 Years": 13.5,
+		"Age 15 to 64 Years": 72.6,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "Ireland",
+		"Age 0 to 14 Years": 21.6,
+		"Age 15 to 64 Years": 64.4,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "Taiwan",
+		"Age 0 to 14 Years": 13.12,
+		"Age 15 to 64 Years": 73.02,
+		"Age above 65 Years": 14
+	},
+	{
+		"Country": "Cyprus",
+		"Age 0 to 14 Years": 16.8,
+		"Age 15 to 64 Years": 69.8,
+		"Age above 65 Years": 13
+	},
+	{
+		"Country": "Albania",
+		"Age 0 to 14 Years": 17.4,
+		"Age 15 to 64 Years": 68.9,
+		"Age above 65 Years": 13
+	},
+	{
+		"Country": "Aruba (Netherlands)",
+		"Age 0 to 14 Years": 17.9,
+		"Age 15 to 64 Years": 69.0,
+		"Age above 65 Years": 13
+	},
+	{
+		"Country": "Singapore",
+		"Age 0 to 14 Years": 15.0,
+		"Age 15 to 64 Years": 72.1,
+		"Age above 65 Years": 13
+	},
+	{
+		"Country": "North Macedonia",
+		"Age 0 to 14 Years": 23.7,
+		"Age 15 to 64 Years": 64.4,
+		"Age above 65 Years": 12
+	},
+	{
+		"Country": "Israel",
+		"Age 0 to 14 Years": 27.9,
+		"Age 15 to 64 Years": 60.4,
+		"Age above 65 Years": 12
+	},
+	{
+		"Country": "Thailand",
+		"Age 0 to 14 Years": 17.3,
+		"Age 15 to 64 Years": 71.3,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Argentina",
+		"Age 0 to 14 Years": 24.9,
+		"Age 15 to 64 Years": 63.9,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Armenia",
+		"Age 0 to 14 Years": 20.0,
+		"Age 15 to 64 Years": 68.8,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Chile",
+		"Age 0 to 14 Years": 20.3,
+		"Age 15 to 64 Years": 68.6,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Mauritius",
+		"Age 0 to 14 Years": 18.4,
+		"Age 15 to 64 Years": 70.7,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Moldova",
+		"Age 0 to 14 Years": 15.7,
+		"Age 15 to 64 Years": 73.4,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "China",
+		"Age 0 to 14 Years": 17.7,
+		"Age 15 to 64 Years": 71.7,
+		"Age above 65 Years": 11
+	},
+	{
+		"Country": "Sri Lanka",
+		"Age 0 to 14 Years": 24.0,
+		"Age 15 to 64 Years": 65.9,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Trinidad and Tobago",
+		"Age 0 to 14 Years": 20.7,
+		"Age 15 to 64 Years": 69.3,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Macau",
+		"Age 0 to 14 Years": 13.4,
+		"Age 15 to 64 Years": 76.9,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Jamaica",
+		"Age 0 to 14 Years": 22.7,
+		"Age 15 to 64 Years": 67.6,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Saint Lucia",
+		"Age 0 to 14 Years": 18.9,
+		"Age 15 to 64 Years": 71.4,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Guam (US)",
+		"Age 0 to 14 Years": 24.7,
+		"Age 15 to 64 Years": 65.7,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Costa Rica",
+		"Age 0 to 14 Years": 21.3,
+		"Age 15 to 64 Years": 68.9,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "North Korea",
+		"Age 0 to 14 Years": 20.6,
+		"Age 15 to 64 Years": 69.9,
+		"Age above 65 Years": 10
+	},
+	{
+		"Country": "Bahamas",
+		"Age 0 to 14 Years": 20.5,
+		"Age 15 to 64 Years": 70.6,
+		"Age above 65 Years": 9
+	},
+	{
+		"Country": "Brazil",
+		"Age 0 to 14 Years": 21.7,
+		"Age 15 to 64 Years": 69.7,
+		"Age above 65 Years": 9
+	},
+	{
+		"Country": "Seychelles",
+		"Age 0 to 14 Years": 22.2,
+		"Age 15 to 64 Years": 69.2,
+		"Age above 65 Years": 9
+	},
+	{
+		"Country": "Lebanon",
+		"Age 0 to 14 Years": 23.1,
+		"Age 15 to 64 Years": 68.4,
+		"Age above 65 Years": 9
+	},
+	{
+		"Country": "El Salvador",
+		"Age 0 to 14 Years": 27.4,
+		"Age 15 to 64 Years": 64.4,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Turkey",
+		"Age 0 to 14 Years": 25.0,
+		"Age 15 to 64 Years": 66.9,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Tunisia",
+		"Age 0 to 14 Years": 24.0,
+		"Age 15 to 64 Years": 68.0,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Panama",
+		"Age 0 to 14 Years": 27.4,
+		"Age 15 to 64 Years": 64.7,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Saint Vincent and the Grenadines",
+		"Age 0 to 14 Years": 23.8,
+		"Age 15 to 64 Years": 68.5,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Colombia",
+		"Age 0 to 14 Years": 23.5,
+		"Age 15 to 64 Years": 68.9,
+		"Age above 65 Years": 8
+	},
+	{
+		"Country": "Grenada",
+		"Age 0 to 14 Years": 26.3,
+		"Age 15 to 64 Years": 66.4,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Peru",
+		"Age 0 to 14 Years": 27.4,
+		"Age 15 to 64 Years": 65.5,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Vietnam",
+		"Age 0 to 14 Years": 23.1,
+		"Age 15 to 64 Years": 69.8,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Ecuador",
+		"Age 0 to 14 Years": 28.4,
+		"Age 15 to 64 Years": 64.5,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Dominican Republic",
+		"Age 0 to 14 Years": 29.3,
+		"Age 15 to 64 Years": 63.7,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Kazakhstan",
+		"Age 0 to 14 Years": 27.9,
+		"Age 15 to 64 Years": 65.1,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Mexico",
+		"Age 0 to 14 Years": 26.7,
+		"Age 15 to 64 Years": 66.5,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Antigua and Barbuda",
+		"Age 0 to 14 Years": 23.9,
+		"Age 15 to 64 Years": 69.2,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Suriname",
+		"Age 0 to 14 Years": 26.4,
+		"Age 15 to 64 Years": 66.6,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Morocco",
+		"Age 0 to 14 Years": 27.4,
+		"Age 15 to 64 Years": 65.8,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Bolivia",
+		"Age 0 to 14 Years": 31.6,
+		"Age 15 to 64 Years": 61.7,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Venezuela",
+		"Age 0 to 14 Years": 27.6,
+		"Age 15 to 64 Years": 65.8,
+		"Age above 65 Years": 7
+	},
+	{
+		"Country": "Paraguay",
+		"Age 0 to 14 Years": 29.4,
+		"Age 15 to 64 Years": 64.2,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Malaysia",
+		"Age 0 to 14 Years": 24.3,
+		"Age 15 to 64 Years": 69.4,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Algeria",
+		"Age 0 to 14 Years": 29.3,
+		"Age 15 to 64 Years": 64.5,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Fiji",
+		"Age 0 to 14 Years": 28.5,
+		"Age 15 to 64 Years": 65.3,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "India",
+		"Age 0 to 14 Years": 27.8,
+		"Age 15 to 64 Years": 66.2,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Azerbaijan",
+		"Age 0 to 14 Years": 23.3,
+		"Age 15 to 64 Years": 70.7,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Nepal",
+		"Age 0 to 14 Years": 30.9,
+		"Age 15 to 64 Years": 63.3,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Tonga",
+		"Age 0 to 14 Years": 35.8,
+		"Age 15 to 64 Years": 58.3,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Myanmar",
+		"Age 0 to 14 Years": 26.8,
+		"Age 15 to 64 Years": 67.4,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Samoa",
+		"Age 0 to 14 Years": 36.6,
+		"Age 15 to 64 Years": 57.8,
+		"Age above 65 Years": 6
+	},
+	{
+		"Country": "Nicaragua",
+		"Age 0 to 14 Years": 29.0,
+		"Age 15 to 64 Years": 65.5,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Iran",
+		"Age 0 to 14 Years": 23.7,
+		"Age 15 to 64 Years": 70.9,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Indonesia",
+		"Age 0 to 14 Years": 27.4,
+		"Age 15 to 64 Years": 67.3,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Guyana",
+		"Age 0 to 14 Years": 28.1,
+		"Age 15 to 64 Years": 65.7,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "South Africa",
+		"Age 0 to 14 Years": 29.0,
+		"Age 15 to 64 Years": 65.7,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Egypt",
+		"Age 0 to 14 Years": 33.5,
+		"Age 15 to 64 Years": 61.4,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Bangladesh",
+		"Age 0 to 14 Years": 28.4,
+		"Age 15 to 64 Years": 66.5,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Bhutan",
+		"Age 0 to 14 Years": 26.6,
+		"Age 15 to 64 Years": 68.6,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Philippines",
+		"Age 0 to 14 Years": 31.7,
+		"Age 15 to 64 Years": 63.5,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Haiti",
+		"Age 0 to 14 Years": 33.0,
+		"Age 15 to 64 Years": 62.2,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Federated States of Micronesia",
+		"Age 0 to 14 Years": 33.1,
+		"Age 15 to 64 Years": 62.1,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Honduras",
+		"Age 0 to 14 Years": 31.6,
+		"Age 15 to 64 Years": 63.7,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Guatemala",
+		"Age 0 to 14 Years": 35.1,
+		"Age 15 to 64 Years": 60.3,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Brunei",
+		"Age 0 to 14 Years": 23.0,
+		"Age 15 to 64 Years": 72.4,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Lesotho",
+		"Age 0 to 14 Years": 35.4,
+		"Age 15 to 64 Years": 60.1,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Cape Verde",
+		"Age 0 to 14 Years": 30.2,
+		"Age 15 to 64 Years": 65.3,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Kyrgyzstan",
+		"Age 0 to 14 Years": 31.8,
+		"Age 15 to 64 Years": 63.7,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Pakistan",
+		"Age 0 to 14 Years": 34.8,
+		"Age 15 to 64 Years": 60.7,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Gabon",
+		"Age 0 to 14 Years": 35.9,
+		"Age 15 to 64 Years": 59.6,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Uzbekistan",
+		"Age 0 to 14 Years": 28.0,
+		"Age 15 to 64 Years": 67.5,
+		"Age above 65 Years": 5
+	},
+	{
+		"Country": "Libya",
+		"Age 0 to 14 Years": 28.2,
+		"Age 15 to 64 Years": 67.4,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Cambodia",
+		"Age 0 to 14 Years": 31.3,
+		"Age 15 to 64 Years": 64.3,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Vanuatu",
+		"Age 0 to 14 Years": 36.0,
+		"Age 15 to 64 Years": 59.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Turkmenistan",
+		"Age 0 to 14 Years": 30.9,
+		"Age 15 to 64 Years": 64.8,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Syria",
+		"Age 0 to 14 Years": 36.6,
+		"Age 15 to 64 Years": 59.1,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Djibouti",
+		"Age 0 to 14 Years": 31.1,
+		"Age 15 to 64 Years": 64.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Maldives",
+		"Age 0 to 14 Years": 23.4,
+		"Age 15 to 64 Years": 72.5,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Laos",
+		"Age 0 to 14 Years": 32.9,
+		"Age 15 to 64 Years": 63.1,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Mongolia",
+		"Age 0 to 14 Years": 29.7,
+		"Age 15 to 64 Years": 66.3,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Botswana",
+		"Age 0 to 14 Years": 31.4,
+		"Age 15 to 64 Years": 64.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Belize",
+		"Age 0 to 14 Years": 31.4,
+		"Age 15 to 64 Years": 64.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Jordan",
+		"Age 0 to 14 Years": 35.5,
+		"Age 15 to 64 Years": 60.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Papua New Guinea",
+		"Age 0 to 14 Years": 35.9,
+		"Age 15 to 64 Years": 60.3,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Central African Republic",
+		"Age 0 to 14 Years": 43.2,
+		"Age 15 to 64 Years": 53.1,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Timor-Leste",
+		"Age 0 to 14 Years": 43.6,
+		"Age 15 to 64 Years": 52.8,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Namibia",
+		"Age 0 to 14 Years": 36.7,
+		"Age 15 to 64 Years": 59.8,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Eritrea",
+		"Age 0 to 14 Years": 41.8,
+		"Age 15 to 64 Years": 54.6,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Sudan",
+		"Age 0 to 14 Years": 40.8,
+		"Age 15 to 64 Years": 55.6,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Ethiopia",
+		"Age 0 to 14 Years": 40.6,
+		"Age 15 to 64 Years": 55.9,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Tajikistan",
+		"Age 0 to 14 Years": 35.3,
+		"Age 15 to 64 Years": 61.3,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Solomon Islands",
+		"Age 0 to 14 Years": 38.8,
+		"Age 15 to 64 Years": 57.7,
+		"Age above 65 Years": 4
+	},
+	{
+		"Country": "Republic of the Congo",
+		"Age 0 to 14 Years": 42.3,
+		"Age 15 to 64 Years": 54.3,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "South Sudan",
+		"Age 0 to 14 Years": 41.7,
+		"Age 15 to 64 Years": 54.9,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Ghana",
+		"Age 0 to 14 Years": 38.5,
+		"Age 15 to 64 Years": 58.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Saudi Arabia",
+		"Age 0 to 14 Years": 25.2,
+		"Age 15 to 64 Years": 71.5,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Eswatini (Swaziland)",
+		"Age 0 to 14 Years": 37.2,
+		"Age 15 to 64 Years": 59.7,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Cameroon",
+		"Age 0 to 14 Years": 42.7,
+		"Age 15 to 64 Years": 54.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Benin",
+		"Age 0 to 14 Years": 42.7,
+		"Age 15 to 64 Years": 54.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Iraq",
+		"Age 0 to 14 Years": 40.4,
+		"Age 15 to 64 Years": 56.4,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Mozambique",
+		"Age 0 to 14 Years": 44.8,
+		"Age 15 to 64 Years": 52.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Liberia",
+		"Age 0 to 14 Years": 41.8,
+		"Age 15 to 64 Years": 55.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Tanzania",
+		"Age 0 to 14 Years": 44.9,
+		"Age 15 to 64 Years": 52.0,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Mauritania",
+		"Age 0 to 14 Years": 39.9,
+		"Age 15 to 64 Years": 56.9,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Guinea",
+		"Age 0 to 14 Years": 42.3,
+		"Age 15 to 64 Years": 54.6,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Palestine",
+		"Age 0 to 14 Years": 39.6,
+		"Age 15 to 64 Years": 57.4,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Senegal",
+		"Age 0 to 14 Years": 42.9,
+		"Age 15 to 64 Years": 54.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Malawi",
+		"Age 0 to 14 Years": 44.0,
+		"Age 15 to 64 Years": 53.0,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Rwanda",
+		"Age 0 to 14 Years": 40.1,
+		"Age 15 to 64 Years": 56.9,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Democratic Republic of the Congo",
+		"Age 0 to 14 Years": 46.3,
+		"Age 15 to 64 Years": 50.7,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Comoros",
+		"Age 0 to 14 Years": 39.8,
+		"Age 15 to 64 Years": 57.3,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Guinea-Bissau",
+		"Age 0 to 14 Years": 40.7,
+		"Age 15 to 64 Years": 55.5,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Ivory Coast",
+		"Age 0 to 14 Years": 42.4,
+		"Age 15 to 64 Years": 54.6,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Madagascar",
+		"Age 0 to 14 Years": 41.0,
+		"Age 15 to 64 Years": 56.1,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "São Tomé and Príncipe",
+		"Age 0 to 14 Years": 42.8,
+		"Age 15 to 64 Years": 54.3,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Yemen",
+		"Age 0 to 14 Years": 39.9,
+		"Age 15 to 64 Years": 57.2,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Togo",
+		"Age 0 to 14 Years": 41.6,
+		"Age 15 to 64 Years": 55.6,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Zimbabwe",
+		"Age 0 to 14 Years": 41.2,
+		"Age 15 to 64 Years": 56.0,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Nigeria",
+		"Age 0 to 14 Years": 44.0,
+		"Age 15 to 64 Years": 53.3,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Equatorial Guinea",
+		"Age 0 to 14 Years": 37.2,
+		"Age 15 to 64 Years": 60.0,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Kenya",
+		"Age 0 to 14 Years": 40.5,
+		"Age 15 to 64 Years": 56.8,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Somalia",
+		"Age 0 to 14 Years": 46.4,
+		"Age 15 to 64 Years": 50.8,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Afghanistan",
+		"Age 0 to 14 Years": 43.2,
+		"Age 15 to 64 Years": 54.2,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Burundi",
+		"Age 0 to 14 Years": 45.0,
+		"Age 15 to 64 Years": 52.4,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Niger",
+		"Age 0 to 14 Years": 50.2,
+		"Age 15 to 64 Years": 47.2,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Chad",
+		"Age 0 to 14 Years": 47.1,
+		"Age 15 to 64 Years": 50.4,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Sierra Leone",
+		"Age 0 to 14 Years": 42.1,
+		"Age 15 to 64 Years": 55.4,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Zambia",
+		"Age 0 to 14 Years": 44.8,
+		"Age 15 to 64 Years": 52.7,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Mali",
+		"Age 0 to 14 Years": 47.7,
+		"Age 15 to 64 Years": 49.8,
+		"Age above 65 Years": 3
+	},
+	{
+		"Country": "Oman",
+		"Age 0 to 14 Years": 21.8,
+		"Age 15 to 64 Years": 75.8,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Burkina Faso",
+		"Age 0 to 14 Years": 45.2,
+		"Age 15 to 64 Years": 52.4,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Bahrain",
+		"Age 0 to 14 Years": 19.7,
+		"Age 15 to 64 Years": 77.9,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Angola",
+		"Age 0 to 14 Years": 46.8,
+		"Age 15 to 64 Years": 50.8,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Gambia",
+		"Age 0 to 14 Years": 45.3,
+		"Age 15 to 64 Years": 52.3,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Kuwait",
+		"Age 0 to 14 Years": 21.1,
+		"Age 15 to 64 Years": 76.6,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Uganda",
+		"Age 0 to 14 Years": 47.7,
+		"Age 15 to 64 Years": 50.1,
+		"Age above 65 Years": 2
+	},
+	{
+		"Country": "Qatar",
+		"Age 0 to 14 Years": 13.9,
+		"Age 15 to 64 Years": 84.8,
+		"Age above 65 Years": 1
+	},
+	{
+		"Country": "United Arab Emirates",
+		"Age 0 to 14 Years": 13.9,
+		"Age 15 to 64 Years": 85.0,
+		"Age above 65 Years": 1
+	}
+]
