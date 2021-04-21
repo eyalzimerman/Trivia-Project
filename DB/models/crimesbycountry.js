@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "CrimesByCountry",
-      tableName: "CrimesByCountries",
+      tableName: "crimes_by_countries",
       underscored: true,
     }
   );

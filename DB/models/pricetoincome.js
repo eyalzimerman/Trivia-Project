@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "PriceToIncome",
-      tableName: "PriceToIncomes",
+      tableName: "price_to_incomes",
       underscored: true,
     }
   );
