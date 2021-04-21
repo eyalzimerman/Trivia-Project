@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       grade: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       amount: {
         type: Sequelize.INTEGER,

@@ -15,12 +15,12 @@ module.exports = (sequelize, DataTypes) => {
     {
       country: DataTypes.STRING,
       region: DataTypes.STRING,
-      gdp: DataTypes.INTEGER,
-      literacy: DataTypes.INTEGER,
-      phones: DataTypes.INTEGER,
-      climate: DataTypes.INTEGER,
-      birthrate: DataTypes.INTEGER,
-      deathrate: DataTypes.INTEGER,
+      gdp: DataTypes.FLOAT,
+      literacy: DataTypes.FLOAT,
+      phones: DataTypes.FLOAT,
+      climate: DataTypes.FLOAT,
+      birthrate: DataTypes.FLOAT,
+      deathrate: DataTypes.FLOAT,
     },
     {
       sequelize,

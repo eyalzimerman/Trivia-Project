@@ -15,13 +15,13 @@ module.exports = {
         type: Sequelize.STRING,
       },
       area_km2: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       population: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       density_per_km2: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       created_at: {
         allowNull: false,

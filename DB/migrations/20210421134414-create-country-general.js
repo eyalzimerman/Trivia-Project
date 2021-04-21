@@ -15,22 +15,22 @@ module.exports = {
         type: Sequelize.STRING,
       },
       gdp: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       literacy: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       phones: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       climate: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       birthrate: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       deathrate: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
       },
       created_at: {
         allowNull: false,

@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
   CostOfLiving.init(
     {
       country: DataTypes.STRING,
-      costOfLivingIndex: DataTypes.INTEGER,
-      rentIndex: DataTypes.INTEGER,
-      groceriesIndex: DataTypes.INTEGER,
-      restaurantPriceIndex: DataTypes.INTEGER,
+      costOfLivingIndex: DataTypes.FLOAT,
+      rentIndex: DataTypes.FLOAT,
+      groceriesIndex: DataTypes.FLOAT,
+      restaurantPriceIndex: DataTypes.FLOAT,
     },
     {
       sequelize,

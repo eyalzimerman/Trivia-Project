@@ -1,33 +1,33 @@
-'use strict';
+"use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('crimes_by_countries', {
+    await queryInterface.createTable("crimes_by_countries", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       country: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       crime_index: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT,
       },
       safety_index: {
-        type: Sequelize.INTEGER
+        type: Sequelize.FLOAT,
       },
       created_at: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updated_at: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('crimes_by_countries');
-  }
+    await queryInterface.dropTable("crimes_by_countries");
+  },
 };

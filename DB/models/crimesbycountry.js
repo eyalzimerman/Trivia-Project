@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   CrimesByCountry.init(
     {
       country: DataTypes.STRING,
-      crimeIndex: DataTypes.INTEGER,
-      safetyIndex: DataTypes.INTEGER,
+      crimeIndex: DataTypes.FLOAT,
+      safetyIndex: DataTypes.FLOAT,
     },
     {
       sequelize,

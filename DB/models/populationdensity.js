@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       rank: DataTypes.INTEGER,
       country: DataTypes.STRING,
-      areaKm2: DataTypes.INTEGER,
-      population: DataTypes.INTEGER,
-      densityPerKm2: DataTypes.INTEGER,
+      areaKm2: DataTypes.FLOAT,
+      population: DataTypes.FLOAT,
+      densityPerKm2: DataTypes.FLOAT,
     },
     {
       sequelize,

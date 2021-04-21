@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
   PriceToIncome.init(
     {
       country: DataTypes.STRING,
-      priceToIncome: DataTypes.INTEGER,
+      priceToIncome: DataTypes.FLOAT,
     },
     {
       sequelize,
