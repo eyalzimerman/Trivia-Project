@@ -14,17 +14,12 @@ module.exports = (sequelize, DataTypes) => {
   Type2.init(
     {
       strTemplate: DataTypes.STRING,
-      country: DataTypes.STRING,
-      option1: DataTypes.STRING,
-      option2: DataTypes.STRING,
-      option3: DataTypes.STRING,
-      option4: DataTypes.STRING,
-      answer: DataTypes.STRING,
+      tableName: DataTypes.STRING,
     },
     {
       sequelize,
       modelName: "Type2",
-      tableName: "Type2s",
+      tableName: "Type2",
       underscored: true,
     }
   );
