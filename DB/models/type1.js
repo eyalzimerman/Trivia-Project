@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       strTemplate: DataTypes.STRING,
       tableName: DataTypes.STRING,
       columnName: DataTypes.STRING,
+      minOrMax: DataTypes.STRING,
     },
     {
       sequelize,

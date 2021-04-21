@@ -13,6 +13,7 @@ const {
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
 
+// find the model by table name from DB
 const tableNavigator = (str) => {
   switch (str) {
     case "population_densities":
@@ -32,21 +33,42 @@ const tableNavigator = (str) => {
   }
 };
 
-//unfinished---------------------------------------------------------------
-// Type1.findAll({ order: Sequelize.literal("rand()"), limit: 1 }).then(
-//   async (question) => {
-//     const { tableName } = question[0];
-//     console.log(question[0].strTemplate);
-//     console.log(question[0].columnName);
-//     const table = await tableNavigator(tableName);
-//     table
-//       .findAll({ order: Sequelize.literal("rand()"), limit: 4 })
-//       .then((encounters) => {
-//         console.log(encounters.map((el) => el.toJSON()));
-//       });
-//   }
-// );
+// return min or max object
+const findMaxOrMin = (arr, str, column) => {
+  if (str === "max") {
+    return arr.reduce((max, obj) => (max[column] > obj[column] ? max : obj));
+  } else {
+    return arr.reduce((min, obj) => (min[column] < obj[column] ? min : obj));
+  }
+};
 
+// function for type one of questions
+const typeOne = async () => {
+  return Type1.findOne({ order: Sequelize.literal("rand()") }).then(
+    async (question) => {
+      const { tableName } = question;
+      const { minOrMax } = question;
+      const table = await tableNavigator(tableName);
+      return table
+        .findAll({ order: Sequelize.literal("rand()"), limit: 4 })
+        .then((option) => {
+          const allOptions = option.map((answer) => answer);
+          const countries = allOptions.map((answer) => answer.country);
+          const answer = findMaxOrMin(allOptions, minOrMax, question.columnName)
+            .country;
+          const obj = {
+            question: question.strTemplate,
+            answer: answer,
+            allAnswers: countries,
+          };
+          return obj;
+        });
+    }
+  );
+};
+// typeOne().then((data) => console.log(data));
+
+// function for type two of questions
 const typeTwo = async () => {
   return Type2.findOne({ order: Sequelize.literal("rand()") }).then(
     async (question) => {
@@ -68,7 +90,7 @@ const typeTwo = async () => {
             order: Sequelize.literal("rand()"),
             limit: 3,
           });
-          const allAnswers = other.map((el) => el[question.columnName]);
+          const allAnswers = other.map((answer) => answer[question.columnName]);
           allAnswers.push(answer);
           const obj = {
             question: newQuestion,
@@ -80,4 +102,4 @@ const typeTwo = async () => {
     }
   );
 };
-typeTwo().then((data) => console.log(data));
+// typeTwo().then((data) => console.log(data));
