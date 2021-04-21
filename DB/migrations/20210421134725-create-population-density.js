@@ -18,7 +18,7 @@ module.exports = {
         type: Sequelize.FLOAT,
       },
       population: {
-        type: Sequelize.FLOAT,
+        type: Sequelize.INTEGER,
       },
       density_per_km2: {
         type: Sequelize.FLOAT,
