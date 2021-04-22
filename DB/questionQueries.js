@@ -159,20 +159,6 @@ const savedQuestion = async () => {
   );
 };
 
-const objectFromClient = {
-  user: {
-    question: "Which country is most populous?",
-    allAnswers: [
-      "Afghanistan",
-      "Western Sahara",
-      "France",
-      "French Guiana (France)",
-    ],
-  },
-  answer: "France",
-  grade: 3,
-};
-
 const addSavedQuestion = async (obj) => {
   if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
     await SavedQuestion.create({
@@ -216,10 +202,39 @@ const addSavedQuestion = async (obj) => {
   }
 };
 
+const objectFromClient = {
+  id: 5,
+  user: {
+    question: "Which country is most populous?",
+    allAnswers: [
+      "Afghanistan",
+      "Western Sahara",
+      "France",
+      "French Guiana (France)",
+    ],
+  },
+  answer: "France",
+  grade: 3,
+};
+
+const updateSavedQuestion = async (obj) => {
+  const savedQuestion = await SavedQuestion.findOne({ where: { id: obj.id } });
+  const { grade } = savedQuestion;
+  const { amount } = savedQuestion;
+  const newAmount = amount + 1;
+  const newGrade = (grade * amount + obj.grade) / newAmount;
+
+  await SavedQuestion.update(
+    { grade: newGrade, amount: newAmount },
+    { where: { id: obj.id } }
+  );
+};
+
 module.exports = {
   typeOne,
   typeTwo,
   typeThree,
   savedQuestion,
   addSavedQuestion,
+  updateSavedQuestion,
 };

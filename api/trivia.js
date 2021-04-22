@@ -10,6 +10,7 @@ const {
   typeThree,
   savedQuestion,
   addSavedQuestion,
+  updateSavedQuestion,
 } = require("../DB/questionQueries");
 
 // GET type1 question method
@@ -73,6 +74,7 @@ router.get("/saved-question", async (req, res) => {
     const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
     if (questionWithAnswer.questionType === 3) {
       const obj = {
+        id: questionWithAnswer.id,
         user: {
           question: questionWithAnswer.strQuestion,
           allAnswers: [questionWithAnswer.option1, questionWithAnswer.option2],
@@ -82,6 +84,7 @@ router.get("/saved-question", async (req, res) => {
       return res.status(200).json(obj);
     } else {
       const obj = {
+        id: questionWithAnswer.id,
         user: {
           question: questionWithAnswer.strQuestion,
           allAnswers: [
@@ -101,14 +104,27 @@ router.get("/saved-question", async (req, res) => {
 });
 
 //POST route
+
 //posts a new question / update
-router.post("/", async (req, res) => {
+router.post("/new", async (req, res) => {
   const { body } = req;
   try {
     await addSavedQuestion(body);
-    res.status(200).json({ message: "Saved successfully" });
+    return res.status(200).json({ message: "Saved successfully" });
   } catch (err) {
-    res.status(500).json({ error: "Could not save new question" });
+    return res.status(500).json({ error: "Could not save new question" });
+  }
+});
+
+router.patch("/update", async (req, res) => {
+  const { body } = req;
+  console.log(body);
+  try {
+    await updateSavedQuestion(body);
+    return res.status(200).json({ message: "Updated successfully" });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({ error: "Could not update saved question" });
   }
 });
 
