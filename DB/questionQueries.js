@@ -179,39 +179,36 @@ const typeThree = async () => {
 
 // function for saved questions
 const savedQuestion = async () => {
-  return SavedQuestion.findOne({ order: Sequelize.literal("rand()") }).then(
+  const allSaved = await SavedQuestion.findAll({});
+  const idGradeArray = allSaved.map((question) => {
+    return {
+      id: question.id,
+      grade: question.grade,
+    };
+  });
+  let gradeSum = 0;
+  idGradeArray.forEach((obj) => {
+    gradeSum += obj.grade;
+  });
+  const percentages = idGradeArray.map((obj) => {
+    return {
+      id: obj.id,
+      percent: Math.floor((obj.grade / gradeSum) * 100),
+    };
+  });
+  const idArray = [];
+  percentages.forEach((obj) => {
+    for (let index = 0; index < obj.percent; index++) {
+      idArray.push(obj.id);
+    }
+  });
+  const randomId = idArray[Math.floor(Math.random() * idArray.length)];
+  return SavedQuestion.findOne({ where: { id: randomId } }).then(
     async (question) => {
       return question.toJSON();
     }
   );
 };
-
-// const objectFromClient = {
-//   id: 4,
-//   user: {
-//     question: "How many people live in Turkmenistan?",
-//     allAnswers: [
-//       {
-//         option: "5851466",
-//         answer: "Turkmenistan",
-//       },
-//       {
-//         option: "304500",
-//         answer: "Vanuatu",
-//       },
-//       {
-//         option: "34218169",
-//         answer: "Saudi Arabia",
-//       },
-//       {
-//         option: "2413643",
-//         answer: "Namibia",
-//       },
-//     ],
-//   },
-//   answer:
-//     "8729d1fecbe9b6ad0736579e2153f7f00f136fb80b41dbc1624cad53d197cbfb1a41a9152b7cd7a047d248b280e69102d0bae653a6b4bde2d9d418d807264b10e5d3de33561dad95588a6386ee33c23d39a7cf4ba27d067c05681458191a690093b37015a80a13",
-// };
 
 const addSavedQuestion = async (obj) => {
   if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
@@ -268,21 +265,6 @@ const addSavedQuestion = async (obj) => {
   }
 };
 
-// const objectFromClient = {
-//   id: 5,
-//   user: {
-//     question: "Which country is most populous?",
-//     allAnswers: [
-//       "Afghanistan",
-//       "Western Sahara",
-//       "France",
-//       "French Guiana (France)",
-//     ],
-//   },
-//   answer: "France",
-//   grade: 3,
-// };
-
 const updateSavedQuestion = async (obj) => {
   const savedQuestion = await SavedQuestion.findOne({ where: { id: obj.id } });
   const { grade } = savedQuestion;
@@ -295,11 +277,6 @@ const updateSavedQuestion = async (obj) => {
     { where: { id: obj.id } }
   );
 };
-
-// const userFromClient = {
-//   name: "Eyal",
-//   score: 1000,
-// };
 
 const createUser = async (obj) => {
   const user = await User.create({ name: obj.name, score: obj.score });
