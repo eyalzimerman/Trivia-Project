@@ -186,14 +186,45 @@ const savedQuestion = async () => {
   );
 };
 
+// const objectFromClient = {
+//   id: 4,
+//   user: {
+//     question: "How many people live in Turkmenistan?",
+//     allAnswers: [
+//       {
+//         option: "5851466",
+//         answer: "Turkmenistan",
+//       },
+//       {
+//         option: "304500",
+//         answer: "Vanuatu",
+//       },
+//       {
+//         option: "34218169",
+//         answer: "Saudi Arabia",
+//       },
+//       {
+//         option: "2413643",
+//         answer: "Namibia",
+//       },
+//     ],
+//   },
+//   answer:
+//     "8729d1fecbe9b6ad0736579e2153f7f00f136fb80b41dbc1624cad53d197cbfb1a41a9152b7cd7a047d248b280e69102d0bae653a6b4bde2d9d418d807264b10e5d3de33561dad95588a6386ee33c23d39a7cf4ba27d067c05681458191a690093b37015a80a13",
+// };
+
 const addSavedQuestion = async (obj) => {
   if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
     await SavedQuestion.create({
       strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0],
-      option2: obj.user.allAnswers[1],
-      option3: obj.user.allAnswers[2],
-      option4: obj.user.allAnswers[3],
+      option1: obj.user.allAnswers[0].option,
+      option2: obj.user.allAnswers[1].option,
+      option3: obj.user.allAnswers[2].option,
+      option4: obj.user.allAnswers[3].option,
+      answer1: obj.user.allAnswers[0].answer,
+      answer2: obj.user.allAnswers[1].answer,
+      answer3: obj.user.allAnswers[2].answer,
+      answer4: obj.user.allAnswers[3].answer,
       answer: obj.answer,
       questionType: 1,
       grade: obj.grade,
@@ -205,10 +236,14 @@ const addSavedQuestion = async (obj) => {
   ) {
     await SavedQuestion.create({
       strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0],
-      option2: obj.user.allAnswers[1],
-      option3: obj.user.allAnswers[2],
-      option4: obj.user.allAnswers[3],
+      option1: obj.user.allAnswers[0].option,
+      option2: obj.user.allAnswers[1].option,
+      option3: obj.user.allAnswers[2].option,
+      option4: obj.user.allAnswers[3].option,
+      answer1: obj.user.allAnswers[0].answer,
+      answer2: obj.user.allAnswers[1].answer,
+      answer3: obj.user.allAnswers[2].answer,
+      answer4: obj.user.allAnswers[3].answer,
       answer: obj.answer,
       questionType: 2,
       grade: obj.grade,
@@ -217,10 +252,14 @@ const addSavedQuestion = async (obj) => {
   } else {
     await SavedQuestion.create({
       strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0],
-      option2: obj.user.allAnswers[1],
+      option1: obj.user.allAnswers[0].option,
+      option2: obj.user.allAnswers[1].option,
       option3: null,
       option4: null,
+      answer1: obj.user.allAnswers[0].answer,
+      answer2: obj.user.allAnswers[1].answer,
+      answer3: null,
+      answer4: null,
       answer: obj.answer,
       questionType: 3,
       grade: obj.grade,
@@ -257,10 +296,10 @@ const updateSavedQuestion = async (obj) => {
   );
 };
 
-const userFromClient = {
-  name: "Eyal",
-  score: 1000,
-};
+// const userFromClient = {
+//   name: "Eyal",
+//   score: 1000,
+// };
 
 const createUser = async (obj) => {
   const user = await User.create({ name: obj.name, score: obj.score });

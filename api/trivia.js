@@ -98,7 +98,16 @@ router.get("/saved-question", async (req, res) => {
         id: questionWithAnswer.id,
         user: {
           question: questionWithAnswer.strQuestion,
-          allAnswers: [questionWithAnswer.option1, questionWithAnswer.option2],
+          allAnswers: [
+            {
+              option: questionWithAnswer.option1,
+              answer: cryptr.encrypt(questionWithAnswer.answer1),
+            },
+            {
+              option: questionWithAnswer.option2,
+              answer: cryptr.encrypt(questionWithAnswer.answer2),
+            },
+          ],
         },
         answer: encryptedAnswer,
       };
@@ -109,10 +118,22 @@ router.get("/saved-question", async (req, res) => {
         user: {
           question: questionWithAnswer.strQuestion,
           allAnswers: [
-            questionWithAnswer.option1,
-            questionWithAnswer.option2,
-            questionWithAnswer.option3,
-            questionWithAnswer.option4,
+            {
+              option: questionWithAnswer.option1,
+              answer: cryptr.encrypt(questionWithAnswer.answer1),
+            },
+            {
+              option: questionWithAnswer.option2,
+              answer: cryptr.encrypt(questionWithAnswer.answer2),
+            },
+            {
+              option: questionWithAnswer.option3,
+              answer: cryptr.encrypt(questionWithAnswer.answer3),
+            },
+            {
+              option: questionWithAnswer.option4,
+              answer: cryptr.encrypt(questionWithAnswer.answer4),
+            },
           ],
         },
         answer: encryptedAnswer,
@@ -135,7 +156,7 @@ router.get("/scoreboard", async (req, res) => {
 
 //POST route
 
-//posts a new question / update
+//posts a new question
 router.post("/new", async (req, res) => {
   const { body } = req;
   try {
