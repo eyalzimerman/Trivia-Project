@@ -9,6 +9,7 @@ const {
   typeTwo,
   typeThree,
   savedQuestion,
+  addSavedQuestion,
 } = require("../DB/questionQueries");
 
 // GET type1 question method
@@ -101,6 +102,14 @@ router.get("/saved-question", async (req, res) => {
 
 //POST route
 //posts a new question / update
-router.post("/", (req, res) => {});
+router.post("/", async (req, res) => {
+  const { body } = req;
+  try {
+    await addSavedQuestion(body);
+    res.status(200).json({ message: "Saved successfully" });
+  } catch (err) {
+    res.status(500).json({ error: "Could not save new question" });
+  }
+});
 
 module.exports = router;

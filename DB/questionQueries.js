@@ -159,4 +159,67 @@ const savedQuestion = async () => {
   );
 };
 
-module.exports = { typeOne, typeTwo, typeThree, savedQuestion };
+const objectFromClient = {
+  user: {
+    question: "Which country is most populous?",
+    allAnswers: [
+      "Afghanistan",
+      "Western Sahara",
+      "France",
+      "French Guiana (France)",
+    ],
+  },
+  answer: "France",
+  grade: 3,
+};
+
+const addSavedQuestion = async (obj) => {
+  if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
+    await SavedQuestion.create({
+      strQuestion: obj.user.question,
+      option1: obj.user.allAnswers[0],
+      option2: obj.user.allAnswers[1],
+      option3: obj.user.allAnswers[2],
+      option4: obj.user.allAnswers[3],
+      answer: obj.answer,
+      questionType: 1,
+      grade: obj.grade,
+      amount: 1,
+    });
+  } else if (
+    obj.user.allAnswers.length === 4 &&
+    !obj.user.question.includes("Which")
+  ) {
+    await SavedQuestion.create({
+      strQuestion: obj.user.question,
+      option1: obj.user.allAnswers[0],
+      option2: obj.user.allAnswers[1],
+      option3: obj.user.allAnswers[2],
+      option4: obj.user.allAnswers[3],
+      answer: obj.answer,
+      questionType: 2,
+      grade: obj.grade,
+      amount: 1,
+    });
+  } else {
+    await SavedQuestion.create({
+      strQuestion: obj.user.question,
+      option1: obj.user.allAnswers[0],
+      option2: obj.user.allAnswers[1],
+      option3: null,
+      option4: null,
+      answer: obj.answer,
+      questionType: 3,
+      grade: obj.grade,
+      amount: 1,
+    });
+  }
+};
+
+module.exports = {
+  typeOne,
+  typeTwo,
+  typeThree,
+  savedQuestion,
+  addSavedQuestion,
+};
