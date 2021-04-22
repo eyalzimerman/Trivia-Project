@@ -13,16 +13,16 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          str_template: "Is X larger than Y?",
+          str_template: "Is the size of X bigger than Y?",
           table_name: "population_densities",
-          column_name: "area_km2",
+          column_name: "areaKm2",
           created_at: new Date(),
           updated_at: new Date(),
         },
         {
           str_template: "Does X have a higher population density than Y?",
           table_name: "population_densities",
-          column_name: "rank",
+          column_name: "densityPerKm2",
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -30,7 +30,7 @@ module.exports = {
           str_template:
             "Is the quality of life in X higher than the quality of life in Y?",
           table_name: "quality_of_lives",
-          column_name: "quality_of_life_index",
+          column_name: "qualityOfLifeIndex",
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -38,7 +38,7 @@ module.exports = {
           str_template:
             "Is the crime rate of X higher than the crime rate in Y?",
           table_name: "crimes_by_countries",
-          column_name: "crime_index",
+          column_name: "crimeIndex",
           created_at: new Date(),
           updated_at: new Date(),
         },
@@ -46,7 +46,7 @@ module.exports = {
           str_template:
             "Are restaurants in X more expensive than restaurants in Y?",
           table_name: "cost_of_livings",
-          column_name: "restaurant_price_index",
+          column_name: "restaurantPriceIndex",
           created_at: new Date(),
           updated_at: new Date(),
         },
