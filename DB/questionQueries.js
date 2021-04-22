@@ -2,6 +2,7 @@ const {
   Type1,
   Type2,
   Type3,
+  SavedQuestion,
   CostOfLiving,
   CountryCapital,
   CountryGeneral,
@@ -149,4 +150,13 @@ const typeThree = async () => {
 };
 // typeThree().then((data) => console.log(data));
 
-module.exports = { typeOne, typeTwo, typeThree };
+// function for saved questions
+const savedQuestion = async () => {
+  return SavedQuestion.findOne({ order: Sequelize.literal("rand()") }).then(
+    async (question) => {
+      return question.toJSON();
+    }
+  );
+};
+
+module.exports = { typeOne, typeTwo, typeThree, savedQuestion };
