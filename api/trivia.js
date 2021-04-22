@@ -11,6 +11,8 @@ const {
   savedQuestion,
   addSavedQuestion,
   updateSavedQuestion,
+  createUser,
+  getOrderedScoreboard,
 } = require("../DB/questionQueries");
 
 // GET type1 question method
@@ -103,6 +105,15 @@ router.get("/saved-question", async (req, res) => {
   }
 });
 
+router.get("/scoreboard", async (req, res) => {
+  try {
+    const scoreboard = await getOrderedScoreboard();
+    res.status(200).json(scoreboard);
+  } catch (err) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 //POST route
 
 //posts a new question / update
@@ -116,6 +127,20 @@ router.post("/new", async (req, res) => {
   }
 });
 
+//Add new user with score at the end of the game
+router.post("/user", async (req, res) => {
+  const { body } = req;
+  try {
+    await createUser(body);
+    res.status(200).json({ message: "User added successfully" });
+  } catch (err) {
+    res.status(500).json({ message: "Failed to create user" });
+  }
+});
+
+//PATCH Routes
+
+//update saved question with new grade and new amount
 router.patch("/update", async (req, res) => {
   const { body } = req;
   console.log(body);

@@ -10,6 +10,8 @@ const {
   PopulationDensity,
   PriceToIncome,
   QualityOfLife,
+  User,
+  Scoreboard,
 } = require("./models");
 const { Op } = require("sequelize");
 const Sequelize = require("sequelize");
@@ -202,20 +204,20 @@ const addSavedQuestion = async (obj) => {
   }
 };
 
-const objectFromClient = {
-  id: 5,
-  user: {
-    question: "Which country is most populous?",
-    allAnswers: [
-      "Afghanistan",
-      "Western Sahara",
-      "France",
-      "French Guiana (France)",
-    ],
-  },
-  answer: "France",
-  grade: 3,
-};
+// const objectFromClient = {
+//   id: 5,
+//   user: {
+//     question: "Which country is most populous?",
+//     allAnswers: [
+//       "Afghanistan",
+//       "Western Sahara",
+//       "France",
+//       "French Guiana (France)",
+//     ],
+//   },
+//   answer: "France",
+//   grade: 3,
+// };
 
 const updateSavedQuestion = async (obj) => {
   const savedQuestion = await SavedQuestion.findOne({ where: { id: obj.id } });
@@ -230,6 +232,25 @@ const updateSavedQuestion = async (obj) => {
   );
 };
 
+const userFromClient = {
+  name: "Eyal",
+  score: 1000,
+};
+
+const createUser = async (obj) => {
+  const user = await User.create({ name: obj.name, score: obj.score });
+  await Scoreboard.create({
+    userId: user.id,
+    name: user.name,
+    score: user.score,
+  });
+};
+
+const getOrderedScoreboard = async () => {
+  const scoreboard = await Scoreboard.findAll({ order: [["score", "DESC"]] });
+  return scoreboard;
+};
+
 module.exports = {
   typeOne,
   typeTwo,
@@ -237,4 +258,6 @@ module.exports = {
   savedQuestion,
   addSavedQuestion,
   updateSavedQuestion,
+  createUser,
+  getOrderedScoreboard,
 };
