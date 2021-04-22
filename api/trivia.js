@@ -19,11 +19,18 @@ const {
 router.get("/type1", async (req, res) => {
   try {
     const questionWithAnswer = await typeOne();
+    console.log(questionWithAnswer);
+    const encryptedArr = questionWithAnswer.allAnswers.map((question) => {
+      return {
+        option: question.country,
+        answer: cryptr.encrypt(question.answer),
+      };
+    });
     const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
     const obj = {
       user: {
         question: questionWithAnswer.question,
-        allAnswers: questionWithAnswer.allAnswers,
+        allAnswers: encryptedArr,
       },
       answer: encryptedAnswer,
     };
@@ -38,10 +45,16 @@ router.get("/type2", async (req, res) => {
   try {
     const questionWithAnswer = await typeTwo();
     const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedArr = questionWithAnswer.allAnswers.map((question) => {
+      return {
+        option: question.option,
+        answer: cryptr.encrypt(question.answer),
+      };
+    });
     const obj = {
       user: {
         question: questionWithAnswer.question,
-        allAnswers: questionWithAnswer.allAnswers,
+        allAnswers: encryptedArr,
       },
       answer: encryptedAnswer,
     };
@@ -56,11 +69,16 @@ router.get("/type3", async (req, res) => {
   try {
     const questionWithAnswer = await typeThree();
     const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedArr = questionWithAnswer.countries.map((question) => {
+      return {
+        country: question.country,
+        answer: cryptr.encrypt(question.answer),
+      };
+    });
     const obj = {
       user: {
         question: questionWithAnswer.question,
-        allAnswers: questionWithAnswer.allAnswers,
-        countries: questionWithAnswer.countries,
+        allAnswers: encryptedArr,
       },
       answer: encryptedAnswer,
     };
