@@ -22,6 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       questionType: DataTypes.INTEGER,
       grade: DataTypes.FLOAT,
       amount: DataTypes.INTEGER,
+      answer1: DataTypes.STRING,
+      answer2: DataTypes.STRING,
+      answer3: DataTypes.STRING,
+      answer4: DataTypes.STRING,
     },
     {
       sequelize,
