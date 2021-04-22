@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function UserRow() {
-  return <div></div>;
+export default function UserRow({ user }) {
+  return (
+    <div>
+      {user.name} {user.score}
+    </div>
+  );
 }
