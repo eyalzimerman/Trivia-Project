@@ -94,9 +94,9 @@ const typeTwo = async () => {
             limit: 3,
           });
 
-          const allAnswers = other.map((answer) => answer[question.columnName]);
+          let allAnswers = other.map((answer) => answer[question.columnName]);
           allAnswers.push(answer);
-
+          allAnswers = allAnswers.sort(() => Math.random() - 0.5);
           const obj = {
             question: newQuestion,
             answer: answer,
