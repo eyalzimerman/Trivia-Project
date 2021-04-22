@@ -15,6 +15,8 @@ const {
   getOrderedScoreboard,
 } = require("../DB/questionQueries");
 
+//GET Routes--------------------------------------------------------------------------
+
 // GET type1 question method
 router.get("/type1", async (req, res) => {
   try {
@@ -88,7 +90,7 @@ router.get("/type3", async (req, res) => {
   }
 });
 
-//get question from the saved questions
+//Get question from the saved questions
 router.get("/saved-question", async (req, res) => {
   try {
     const questionWithAnswer = await savedQuestion();
@@ -145,6 +147,7 @@ router.get("/saved-question", async (req, res) => {
   }
 });
 
+//Gets the scoreboard
 router.get("/scoreboard", async (req, res) => {
   try {
     const scoreboard = await getOrderedScoreboard();
@@ -154,7 +157,7 @@ router.get("/scoreboard", async (req, res) => {
   }
 });
 
-//POST route
+//POST Routes--------------------------------------------------------------------------
 
 //posts a new question
 router.post("/new", async (req, res) => {
@@ -178,7 +181,7 @@ router.post("/user", async (req, res) => {
   }
 });
 
-//PATCH Routes
+//PATCH Routes--------------------------------------------------------------------------
 
 //update saved question with new grade and new amount
 router.patch("/update", async (req, res) => {

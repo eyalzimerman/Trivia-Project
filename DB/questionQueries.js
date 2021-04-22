@@ -74,7 +74,6 @@ const typeOne = async () => {
     }
   );
 };
-// typeOne().then((data) => console.log(data));
 
 // function for type two of questions
 const typeTwo = async () => {
@@ -125,7 +124,6 @@ const typeTwo = async () => {
     }
   );
 };
-// typeTwo().then((data) => console.log(data));
 
 // function for type three of questions
 const typeThree = async () => {
@@ -175,9 +173,8 @@ const typeThree = async () => {
     }
   );
 };
-// typeThree().then((data) => console.log(data));
 
-// function for saved questions
+// Loads a question based on their grading (the higher the grade the higher the percentage)
 const savedQuestion = async () => {
   const allSaved = await SavedQuestion.findAll({});
   const idGradeArray = allSaved.map((question) => {
@@ -210,6 +207,7 @@ const savedQuestion = async () => {
   );
 };
 
+//Adds a new questions to the saved questions database
 const addSavedQuestion = async (obj) => {
   if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
     await SavedQuestion.create({
@@ -265,6 +263,7 @@ const addSavedQuestion = async (obj) => {
   }
 };
 
+//Updates a saved question's grade and amount
 const updateSavedQuestion = async (obj) => {
   const savedQuestion = await SavedQuestion.findOne({ where: { id: obj.id } });
   const { grade } = savedQuestion;
@@ -278,6 +277,7 @@ const updateSavedQuestion = async (obj) => {
   );
 };
 
+//Creates a user with a user name and a score
 const createUser = async (obj) => {
   const user = await User.create({ name: obj.name, score: obj.score });
   await Scoreboard.create({
@@ -287,6 +287,7 @@ const createUser = async (obj) => {
   });
 };
 
+//Returns the scoreboard sorted from highest score to lowest
 const getOrderedScoreboard = async () => {
   const scoreboard = await Scoreboard.findAll({ order: [["score", "DESC"]] });
   return scoreboard;
