@@ -56,13 +56,18 @@ const typeOne = async () => {
         .findAll({ order: Sequelize.literal("rand()"), limit: 4 })
         .then((option) => {
           const allOptions = option.map((answer) => answer);
-          const countries = allOptions.map((answer) => answer.country);
+          const optionWithAnswers = allOptions.map((option) => {
+            return {
+              country: option.country,
+              answer: option[question.columnName],
+            };
+          });
           const answer = findMaxOrMin(allOptions, minOrMax, question.columnName)
             .country;
           const obj = {
             question: question.strTemplate,
             answer: answer,
-            allAnswers: countries,
+            allAnswers: optionWithAnswers,
           };
           return obj;
         });
@@ -85,6 +90,11 @@ const typeTwo = async () => {
           const newQuestion = question.strTemplate.replace("X", countryName);
           const answer = country[question.columnName];
 
+          const objAnswer = {
+            option: country[question.columnName],
+            answer: country.country,
+          };
+
           const column = question.columnName
             .split(/(?=[A-Z])/)
             .join("_")
@@ -97,13 +107,18 @@ const typeTwo = async () => {
             limit: 3,
           });
 
-          let allAnswers = other.map((answer) => answer[question.columnName]);
-          allAnswers.push(answer);
-          allAnswers = allAnswers.sort(() => Math.random() - 0.5);
+          let allOthers = other.map((answer) => {
+            return {
+              option: answer[question.columnName],
+              answer: answer.country,
+            };
+          });
+          allOthers.push(objAnswer);
+          allOthers = allOthers.sort(() => Math.random() - 0.5);
           const obj = {
             question: newQuestion,
             answer: answer,
-            allAnswers: allAnswers,
+            allAnswers: allOthers,
           };
           return obj;
         });
@@ -144,6 +159,16 @@ const typeThree = async () => {
             question: newQuestion,
             answer: theAnswer,
             allAnswers: [true, false],
+            countries: [
+              {
+                country: firstCountry.country,
+                answer: firstCountry[question.columnName],
+              },
+              {
+                country: secondCountry.country,
+                answer: secondCountry[question.columnName],
+              },
+            ],
           };
           return obj;
         });

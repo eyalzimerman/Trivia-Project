@@ -60,6 +60,7 @@ router.get("/type3", async (req, res) => {
       user: {
         question: questionWithAnswer.question,
         allAnswers: questionWithAnswer.allAnswers,
+        countries: questionWithAnswer.countries,
       },
       answer: encryptedAnswer,
     };
