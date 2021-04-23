@@ -247,8 +247,8 @@ const addSavedQuestion = async (obj) => {
   } else {
     await SavedQuestion.create({
       strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0].option,
-      option2: obj.user.allAnswers[1].option,
+      option1: obj.user.allAnswers[0].country,
+      option2: obj.user.allAnswers[1].country,
       option3: null,
       option4: null,
       answer1: obj.user.allAnswers[0].answer,

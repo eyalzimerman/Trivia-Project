@@ -31,7 +31,7 @@ export default function Game() {
     (async () => {
       const num = Math.floor(Math.random() * 3) + 1;
       const res = await axios.get(`/api/trivia/type${num}`);
-      console.log(res.data);
+      //   console.log(res.data);
       setQuestion(res.data);
     })();
   }, []);
@@ -60,13 +60,13 @@ export default function Game() {
       } else {
         const num = Math.floor(Math.random() * 3) + 1;
         const res = await axios.get(`/api/trivia/type${num}`);
-        console.log(res.data);
+        // console.log(res.data);
         setQuestion(res.data);
       }
     })();
   }, [skipOrRate]);
 
-  const onRateClicking = () => {
+  const onRateOrSkipClicking = () => {
     setSkipOrRate((prev) => prev + 1);
     setIsAnswerVisible(false);
     setIsRatingVisible(false);
@@ -94,7 +94,13 @@ export default function Game() {
             />
           );
         })}
-      {isRatingVisible ? <Grading onRateClicking={onRateClicking} /> : null}
+      {isRatingVisible ? (
+        <Grading
+          onRateOrSkipClicking={onRateOrSkipClicking}
+          question={question}
+          setSkipOrRate={setSkipOrRate}
+        />
+      ) : null}
     </div>
   );
 }
