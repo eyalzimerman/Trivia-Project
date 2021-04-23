@@ -24,6 +24,8 @@ export default function Game({ userName }) {
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
   const [answerTimeClicked, setAnswerTimeClicked] = useState();
 
+  const [ratedNewQuestions, setRatedNewQuestions] = useState([]);
+
   useEffect(() => {
     if (counter === 0) {
       setIsAnswerVisible(true);
@@ -84,7 +86,6 @@ export default function Game({ userName }) {
       } else {
         if (questionNumber % 3 === 0) {
           let res = await axios.get(`/api/trivia/saved-question`);
-
           while (currentQuestionIdArray.includes(res.data.id)) {
             res = await axios.get(`/api/trivia/saved-question`);
             if (!currentQuestionIdArray.includes(res.data.id)) {
@@ -116,6 +117,9 @@ export default function Game({ userName }) {
         };
         try {
           await axios.post("/api/trivia/user", user);
+          for (const question of ratedNewQuestions) {
+            await axios.post("/api/trivia/new", question);
+          }
         } catch (error) {
           console.log("User failed");
         }
@@ -180,6 +184,8 @@ export default function Game({ userName }) {
               question={question}
               setSkipOrRate={setSkipOrRate}
               questionNumber={questionNumber}
+              setRatedNewQuestions={setRatedNewQuestions}
+              ratedNewQuestions={ratedNewQuestions}
             />
           ) : null}
         </div>

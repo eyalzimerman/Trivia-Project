@@ -10,6 +10,8 @@ export default function Grading({
   onRateOrSkipClicking,
   question,
   questionNumber,
+  setRatedNewQuestions,
+  ratedNewQuestions,
 }) {
   const [value, setValue] = useState(0);
 
@@ -22,11 +24,10 @@ export default function Grading({
         console.log(err);
       }
     } else {
-      try {
-        await axios.post("/api/trivia/new", questionToSave);
-      } catch (err) {
-        console.log(err);
-      }
+      const temp = [...ratedNewQuestions];
+      temp.push(questionToSave);
+      setRatedNewQuestions(temp);
+      console.log(ratedNewQuestions);
     }
   };
   useEffect(() => {

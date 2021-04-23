@@ -267,6 +267,11 @@ const addSavedQuestion = async (obj) => {
   }
 };
 
+// const addManyQuestions = async () => {
+//   await 
+// }
+
+
 //Updates a saved question's grade and amount
 const updateSavedQuestion = async (obj) => {
   const savedQuestion = await SavedQuestion.findOne({ where: { id: obj.id } });
