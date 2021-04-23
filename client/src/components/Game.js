@@ -50,13 +50,22 @@ export default function Game() {
   };
 
   useEffect(() => {
+    setQuestionNumber((prev) => (prev += 1));
+
     (async () => {
-      const num = Math.floor(Math.random() * 3) + 1;
-      const res = await axios.get(`/api/trivia/type${num}`);
-      console.log(res.data);
-      setQuestion(res.data);
+      if (questionNumber % 3 === 0) {
+        const res = await axios.get(`/api/trivia/saved-question`);
+        console.log(res.data);
+        setQuestion(res.data);
+      } else {
+        const num = Math.floor(Math.random() * 3) + 1;
+        const res = await axios.get(`/api/trivia/type${num}`);
+        console.log(res.data);
+        setQuestion(res.data);
+      }
     })();
   }, [skipOrRate]);
+
   const onRateClicking = () => {
     setSkipOrRate((prev) => prev + 1);
     setIsAnswerVisible(false);
