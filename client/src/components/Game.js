@@ -18,6 +18,8 @@ export default function Game() {
   const [lives, setLives] = useState(3);
   const [disableButtons, setDisableButtons] = useState(false);
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
+  const [answerTimeClicked, setAnswerTimeClicked] = useState();
+  const [gameScore, setGameScore] = useState(0);
 
   useEffect(() => {
     if (counter === 0) {
@@ -53,6 +55,11 @@ export default function Game() {
     if (answer === value) {
       console.log("success");
       setDisableButtons(true);
+      setAnswerTimeClicked(counter);
+      const timeItTookToAnswer = prevCounter - counter;
+      const score = (1 - timeItTookToAnswer / prevCounter) * 70 + 30;
+      setGameScore((prev) => (prev += score));
+      console.log(gameScore);
     } else {
       console.log("Big fail");
       setDisableButtons(true);
@@ -67,21 +74,35 @@ export default function Game() {
     setQuestionNumber((prev) => (prev += 1));
 
     (async () => {
-      if (questionNumber % 3 === 0) {
-        const res = await axios.get(`/api/trivia/saved-question`);
-
-        const questionId = res.data.id;
-        const temp = [...currentQuestionIdArray];
-        temp.push(questionId);
-        setCurrentQuestionIdArray(temp);
-        setQuestion(res.data);
-        setDisableButtons(false);
-      } else {
+      if (allSavedQuestionsId.length === currentQuestionIdArray.length) {
         const num = Math.floor(Math.random() * 3) + 1;
         const res = await axios.get(`/api/trivia/type${num}`);
         // console.log(res.data);
         setQuestion(res.data);
         setDisableButtons(false);
+      } else {
+        if (questionNumber % 3 === 0) {
+          let res = await axios.get(`/api/trivia/saved-question`);
+
+          while (currentQuestionIdArray.includes(res.data.id)) {
+            res = await axios.get(`/api/trivia/saved-question`);
+            if (!currentQuestionIdArray.includes(res.data.id)) {
+              break;
+            }
+          }
+          const questionId = res.data.id;
+          const temp = [...currentQuestionIdArray];
+          temp.push(questionId);
+          setCurrentQuestionIdArray(temp);
+          setQuestion(res.data);
+          setDisableButtons(false);
+        } else {
+          const num = Math.floor(Math.random() * 3) + 1;
+          const res = await axios.get(`/api/trivia/type${num}`);
+          // console.log(res.data);
+          setQuestion(res.data);
+          setDisableButtons(false);
+        }
       }
     })();
   }, [skipOrRate]);
@@ -116,7 +137,6 @@ export default function Game() {
                   answerClickEvent={answerClickEvent}
                   isAnswerVisible={isAnswerVisible}
                   question={question}
-                  setLives={setLives}
                   disableButtons={disableButtons}
                 />
               );
