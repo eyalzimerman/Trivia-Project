@@ -3,7 +3,7 @@ import decypter from "../Utils/decypter";
 import axios from "axios";
 import Answer from "./Answer";
 import Question from "./Question";
-import Rating from "./Rating";
+import Grading from "./Grading";
 
 export default function Game() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -11,11 +11,20 @@ export default function Game() {
   const [counter, setCounter] = useState(20);
   const [isRatingVisible, setIsRatingVisible] = useState(false);
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+  const [skipOrRate, setSkipOrRate] = useState(0);
+  const [prevCounter, setPrevCounter] = useState(20);
 
   useEffect(() => {
-    const timer =
-      counter > 0 && setInterval(() => setCounter(counter - 1), 1000);
-    return () => clearInterval(timer);
+    if (counter === 0) {
+      setIsAnswerVisible(true);
+      setIsRatingVisible(true);
+    } else {
+      const timer =
+        counter > 0 && setInterval(() => setCounter(counter - 0.5), 500);
+      return () => {
+        clearInterval(timer);
+      };
+    }
   }, [counter]);
 
   useEffect(() => {
@@ -37,6 +46,27 @@ export default function Game() {
     }
     setCounter(0);
     setIsAnswerVisible(true);
+    setIsRatingVisible(true);
+  };
+
+  useEffect(() => {
+    (async () => {
+      const num = Math.floor(Math.random() * 3) + 1;
+      const res = await axios.get(`/api/trivia/type${num}`);
+      console.log(res.data);
+      setQuestion(res.data);
+    })();
+  }, [skipOrRate]);
+  const onRateClicking = () => {
+    setSkipOrRate((prev) => prev + 1);
+    setIsAnswerVisible(false);
+    setIsRatingVisible(false);
+    if (prevCounter === 5) {
+      setCounter(5);
+    } else {
+      setCounter(prevCounter - 0.5);
+      setPrevCounter((prev) => (prev -= 0.5));
+    }
   };
 
   return (
@@ -55,7 +85,7 @@ export default function Game() {
             />
           );
         })}
-      {isRatingVisible ? <Rating /> : null}
+      {isRatingVisible ? <Grading onRateClicking={onRateClicking} /> : null}
     </div>
   );
 }
