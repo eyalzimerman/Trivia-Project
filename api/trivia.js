@@ -125,25 +125,53 @@ router.get("/type3", async (req, res) => {
 router.get("/saved-question", async (req, res) => {
   try {
     const questionWithAnswer = await savedQuestion();
+    console.log(questionWithAnswer);
     const encryptedAnswer = encrypt(questionWithAnswer.answer);
     if (questionWithAnswer.questionType === 3) {
-      const obj = {
-        id: questionWithAnswer.id,
-        user: {
-          question: questionWithAnswer.strQuestion,
-          allAnswers: [
-            {
-              option: questionWithAnswer.option1,
-              answer: encrypt(questionWithAnswer.answer1),
-            },
-            {
-              option: questionWithAnswer.option2,
-              answer: encrypt(questionWithAnswer.answer2),
-            },
-          ],
-        },
-        answer: encryptedAnswer,
-      };
+      let obj;
+      if (
+        Number(questionWithAnswer.answer1) > Number(questionWithAnswer.answer2)
+      ) {
+        obj = {
+          id: questionWithAnswer.id,
+          user: {
+            question: questionWithAnswer.strQuestion,
+            allAnswers: [
+              {
+                country: questionWithAnswer.option1,
+                option: "Yes",
+                answer: encrypt(questionWithAnswer.answer1),
+              },
+              {
+                country: questionWithAnswer.option2,
+                option: "No",
+                answer: encrypt(questionWithAnswer.answer2),
+              },
+            ],
+          },
+          answer: encryptedAnswer,
+        };
+      } else {
+        obj = {
+          id: questionWithAnswer.id,
+          user: {
+            question: questionWithAnswer.strQuestion,
+            allAnswers: [
+              {
+                country: questionWithAnswer.option2,
+                option: "Yes",
+                answer: encrypt(questionWithAnswer.answer2),
+              },
+              {
+                country: questionWithAnswer.option1,
+                option: "No",
+                answer: encrypt(questionWithAnswer.answer1),
+              },
+            ],
+          },
+          answer: encryptedAnswer,
+        };
+      }
       return res.status(200).json(obj);
     } else {
       const obj = {
