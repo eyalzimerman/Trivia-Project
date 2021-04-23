@@ -14,9 +14,10 @@ export default function Grading({
   const [value, setValue] = React.useState(0);
   const questionToSave = Object.assign({}, question);
   const onRateHandler = async () => {
-    if (questionNumber % 3 === 0) {
+    console.log(questionNumber);
+    if ((questionNumber - 1) % 3 === 0) {
       try {
-        await axios.patch("/api/trivia/update", JSON.stringify(questionToSave));
+        await axios.patch("/api/trivia/update", questionToSave);
       } catch (err) {
         console.log(err);
       }
@@ -53,8 +54,8 @@ export default function Grading({
         );
       }
       questionToSave.grade = value;
-      onRateOrSkipClicking();
       onRateHandler();
+      onRateOrSkipClicking();
     }
   }, [value]);
   return (
