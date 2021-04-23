@@ -11,7 +11,7 @@ export default function Grading({
   question,
   questionNumber,
 }) {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const questionToSave = Object.assign({}, question);
   const onRateHandler = async () => {

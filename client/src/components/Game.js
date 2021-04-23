@@ -16,12 +16,13 @@ export default function Game({ userName }) {
   const [isAnswerVisible, setIsAnswerVisible] = useState(false);
   const [skipOrRate, setSkipOrRate] = useState(0);
   const [prevCounter, setPrevCounter] = useState(20);
-  const [currentQuestionIdArray, setCurrentQuestionIdArray] = useState([]);
   const [lives, setLives] = useState(3);
   const [disableButtons, setDisableButtons] = useState(false);
+  const [gameScore, setGameScore] = useState(0);
+
+  const [currentQuestionIdArray, setCurrentQuestionIdArray] = useState([]);
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
   const [answerTimeClicked, setAnswerTimeClicked] = useState();
-  const [gameScore, setGameScore] = useState(0);
 
   useEffect(() => {
     if (counter === 0) {
@@ -42,7 +43,6 @@ export default function Game({ userName }) {
     (async () => {
       const num = Math.floor(Math.random() * 3) + 1;
       const res = await axios.get(`/api/trivia/type${num}`);
-      //   console.log(res.data);
       setQuestion(res.data);
 
       const allSaved = await axios.get("/api/trivia/all-saved-questions");
@@ -55,9 +55,7 @@ export default function Game({ userName }) {
 
   const answerClickEvent = (value) => {
     const answer = decypter(question.answer);
-    // console.log(answer);
     if (answer === value) {
-      console.log("success");
       setDisableButtons(true);
       setAnswerTimeClicked(counter);
       const timeItTookToAnswer = prevCounter - counter;
@@ -65,9 +63,7 @@ export default function Game({ userName }) {
         (1 - timeItTookToAnswer / prevCounter) * 70 + 30
       );
       setGameScore((prev) => (prev += score));
-      console.log(gameScore);
     } else {
-      console.log("Big fail");
       setDisableButtons(true);
       setLives((prev) => prev - 1);
     }
@@ -113,7 +109,6 @@ export default function Game({ userName }) {
 
   useEffect(() => {
     (async () => {
-      //name: obj.name, score: obj.score
       if (lives === 0) {
         const user = {
           name: userName,
@@ -121,7 +116,6 @@ export default function Game({ userName }) {
         };
         try {
           await axios.post("/api/trivia/user", user);
-          console.log("User Added successfully");
         } catch (error) {
           console.log("User failed");
         }
@@ -144,16 +138,24 @@ export default function Game({ userName }) {
   return (
     <div>
       <div>{userName}</div>
-      <div>{gameScore}</div>
       <div>{counter}</div>
       <div>{lives}</div>
+      <Link to="/">
+        <Button variant="contained" color="primary">
+          Home
+        </Button>
+      </Link>
       {lives === 0 ? (
         <div>
+          <div>{gameScore}</div>
           <Lose />
           <Link to="/scoreboard">
             <Button variant="contained" color="primary">
               Scoreboard
             </Button>
+          </Link>
+          <Link to="/">
+            <Button variant="contained">New Game</Button>
           </Link>
         </div>
       ) : (

@@ -15,7 +15,7 @@ export default function Main() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
-            <Home inputHandler={inputHandler} />
+            <Home inputHandler={inputHandler} userName={userName} />
           </Route>
           <Route exact path="/scoreboard">
             <Scoreboard />
