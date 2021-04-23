@@ -20,6 +20,7 @@ export default function Game({ userName }) {
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
   const [answerTimeClicked, setAnswerTimeClicked] = useState();
   const [gameScore, setGameScore] = useState(0);
+
   useEffect(() => {
     if (counter === 0) {
       setIsAnswerVisible(true);
@@ -107,6 +108,24 @@ export default function Game({ userName }) {
       }
     })();
   }, [skipOrRate]);
+
+  useEffect(() => {
+    (async () => {
+      //name: obj.name, score: obj.score
+      if (lives === 0) {
+        const user = {
+          name: userName,
+          score: gameScore,
+        };
+        try {
+          await axios.post("/api/trivia/user", user);
+          console.log("User Added successfully");
+        } catch (error) {
+          console.log("User failed");
+        }
+      }
+    })();
+  }, [lives]);
 
   const onRateOrSkipClicking = () => {
     setSkipOrRate((prev) => prev + 1);
