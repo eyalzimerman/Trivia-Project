@@ -99,6 +99,7 @@ export default function Game() {
           onRateOrSkipClicking={onRateOrSkipClicking}
           question={question}
           setSkipOrRate={setSkipOrRate}
+          questionNumber={questionNumber}
         />
       ) : null}
     </div>

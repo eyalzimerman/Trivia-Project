@@ -6,14 +6,26 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import decypter from "../Utils/decypter";
 
-export default function Grading({ onRateOrSkipClicking, question }) {
+export default function Grading({
+  onRateOrSkipClicking,
+  question,
+  questionNumber,
+}) {
   const [value, setValue] = React.useState(0);
   const questionToSave = Object.assign({}, question);
   const onRateHandler = async () => {
-    try {
-      await axios.post("/api/trivia/new", questionToSave);
-    } catch (err) {
-      console.log(err);
+    if (questionNumber % 3 === 0) {
+      try {
+        await axios.patch("/api/trivia/update", JSON.stringify(questionToSave));
+      } catch (err) {
+        console.log(err);
+      }
+    } else {
+      try {
+        await axios.post("/api/trivia/new", questionToSave);
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
   useEffect(() => {
