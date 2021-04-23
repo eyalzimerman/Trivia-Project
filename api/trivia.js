@@ -19,6 +19,7 @@ const {
   updateSavedQuestion,
   createUser,
   getOrderedScoreboard,
+  allSavedQuestions,
 } = require("../DB/questionQueries");
 
 //GET Routes--------------------------------------------------------------------------
@@ -212,6 +213,15 @@ router.get("/scoreboard", async (req, res) => {
     const scoreboard = await getOrderedScoreboard();
     res.status(200).json(scoreboard);
   } catch (err) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+router.get("/all-saved-questions", async (req, res) => {
+  try {
+    const allQuestions = await allSavedQuestions();
+    res.status(200).json(allQuestions);
+  } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
 });

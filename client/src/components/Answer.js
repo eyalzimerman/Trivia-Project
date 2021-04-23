@@ -23,12 +23,14 @@ export default function Answer({
   answerClickEvent,
   isAnswerVisible,
   question,
+  disableButtons,
 }) {
   return (
     <div>
       <StyledButton
         onClick={(e) => answerClickEvent(e.target.innerText)}
         variant="outlined"
+        disabled={disableButtons}
       >
         {answer.option}
       </StyledButton>

@@ -207,6 +207,10 @@ const savedQuestion = async () => {
   );
 };
 
+const allSavedQuestions = async () => {
+  return await SavedQuestion.findAll({});
+};
+
 //Adds a new questions to the saved questions database
 const addSavedQuestion = async (obj) => {
   if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
@@ -302,4 +306,5 @@ module.exports = {
   updateSavedQuestion,
   createUser,
   getOrderedScoreboard,
+  allSavedQuestions,
 };

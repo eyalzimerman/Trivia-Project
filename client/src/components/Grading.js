@@ -12,9 +12,9 @@ export default function Grading({
   questionNumber,
 }) {
   const [value, setValue] = React.useState(0);
+
   const questionToSave = Object.assign({}, question);
   const onRateHandler = async () => {
-    console.log(questionNumber);
     if ((questionNumber - 1) % 3 === 0) {
       try {
         await axios.patch("/api/trivia/update", questionToSave);
