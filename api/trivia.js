@@ -79,17 +79,33 @@ router.get("/type3", async (req, res) => {
     const encryptedAnswer = encrypt(String(questionWithAnswer.answer));
     const encryptedArr = questionWithAnswer.countries.map((question, i) => {
       if (i === 0) {
-        return {
-          country: question.country,
-          option: "Yes",
-          answer: encrypt(String(question.answer)),
-        };
+        if (questionWithAnswer.answer === "Yes") {
+          return {
+            country: question.country,
+            option: "Yes",
+            answer: encrypt(String(question.answer)),
+          };
+        } else {
+          return {
+            country: questionWithAnswer.countries[1].country,
+            option: "Yes",
+            answer: encrypt(String(questionWithAnswer.countries[1].answer)),
+          };
+        }
       } else {
-        return {
-          country: question.country,
-          option: "No",
-          answer: encrypt(String(question.answer)),
-        };
+        if (questionWithAnswer.answer === "Yes") {
+          return {
+            country: question.country,
+            option: "No",
+            answer: encrypt(String(question.answer)),
+          };
+        } else {
+          return {
+            country: questionWithAnswer.countries[0].country,
+            option: "No",
+            answer: encrypt(String(questionWithAnswer.countries[0].answer)),
+          };
+        }
       }
     });
     const obj = {

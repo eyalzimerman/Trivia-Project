@@ -10,6 +10,7 @@ export default function Game() {
   const [question, setQuestion] = useState({});
   const [counter, setCounter] = useState(20);
   const [isRatingVisible, setIsRatingVisible] = useState(false);
+  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
 
   useEffect(() => {
     const timer =
@@ -35,6 +36,7 @@ export default function Game() {
       console.log("Big fail");
     }
     setCounter(0);
+    setIsAnswerVisible(true);
   };
 
   return (
@@ -48,6 +50,8 @@ export default function Game() {
               key={`answer key ${i}`}
               answer={answer}
               answerClickEvent={answerClickEvent}
+              isAnswerVisible={isAnswerVisible}
+              question={question}
             />
           );
         })}
