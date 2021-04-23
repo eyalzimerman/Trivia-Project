@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import decypter from "../Utils/decypter";
 import axios from "axios";
 import Answer from "./Answer";
@@ -146,7 +148,14 @@ export default function Game({ userName }) {
       <div>{counter}</div>
       <div>{lives}</div>
       {lives === 0 ? (
-        <Lose />
+        <div>
+          <Lose />
+          <Link to="/scoreboard">
+            <Button variant="contained" color="primary">
+              Scoreboard
+            </Button>
+          </Link>
+        </div>
       ) : (
         <div>
           <Question question={question} />
