@@ -6,7 +6,7 @@ import Question from "./Question";
 import Grading from "./Grading";
 import Lose from "./Lose";
 
-export default function Game() {
+export default function Game({ userName }) {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [question, setQuestion] = useState({});
   const [counter, setCounter] = useState(20);
@@ -20,11 +20,12 @@ export default function Game() {
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
   const [answerTimeClicked, setAnswerTimeClicked] = useState();
   const [gameScore, setGameScore] = useState(0);
-
   useEffect(() => {
     if (counter === 0) {
       setIsAnswerVisible(true);
       setIsRatingVisible(true);
+      setDisableButtons(true);
+      setLives((prev) => prev - 1);
     } else {
       const timer =
         counter > 0 && setInterval(() => setCounter(counter - 0.5), 500);
@@ -57,7 +58,9 @@ export default function Game() {
       setDisableButtons(true);
       setAnswerTimeClicked(counter);
       const timeItTookToAnswer = prevCounter - counter;
-      const score = (1 - timeItTookToAnswer / prevCounter) * 70 + 30;
+      const score = Math.floor(
+        (1 - timeItTookToAnswer / prevCounter) * 70 + 30
+      );
       setGameScore((prev) => (prev += score));
       console.log(gameScore);
     } else {
@@ -65,7 +68,7 @@ export default function Game() {
       setDisableButtons(true);
       setLives((prev) => prev - 1);
     }
-    setCounter(0);
+    setCounter("");
     setIsAnswerVisible(true);
     setIsRatingVisible(true);
   };
@@ -77,7 +80,6 @@ export default function Game() {
       if (allSavedQuestionsId.length === currentQuestionIdArray.length) {
         const num = Math.floor(Math.random() * 3) + 1;
         const res = await axios.get(`/api/trivia/type${num}`);
-        // console.log(res.data);
         setQuestion(res.data);
         setDisableButtons(false);
       } else {
@@ -99,7 +101,6 @@ export default function Game() {
         } else {
           const num = Math.floor(Math.random() * 3) + 1;
           const res = await axios.get(`/api/trivia/type${num}`);
-          // console.log(res.data);
           setQuestion(res.data);
           setDisableButtons(false);
         }
@@ -121,6 +122,8 @@ export default function Game() {
 
   return (
     <div>
+      <div>{userName}</div>
+      <div>{gameScore}</div>
       <div>{counter}</div>
       <div>{lives}</div>
       {lives === 0 ? (

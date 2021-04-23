@@ -3,11 +3,7 @@ import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Home() {
-  const [userName, setUserName] = useState("");
-  const inputHandler = (value) => {
-    setUserName(value);
-  };
+export default function Home({ inputHandler }) {
   return (
     <div>
       <h1>Trivia Game</h1>
