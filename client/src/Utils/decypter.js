@@ -1,6 +1,8 @@
-const Cryptr = require("cryptr");
-const cryptr = new Cryptr("myTotalySecretKey");
+const base64 = require("base-64");
+const utf8 = require("utf8");
 
 export default function decrypter(str) {
-  return cryptr.decrypt(str);
+  const bytes = base64.decode(str);
+  const text = utf8.decode(bytes);
+  return text;
 }

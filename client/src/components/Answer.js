@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function Answer({ answer }) {
-  return <div>{answer.option}</div>;
+export default function Answer({ answer, answerClickEvent }) {
+  return (
+    <div onClick={(e) => answerClickEvent(e.target.innerText)}>
+      {answer.option}
+    </div>
+  );
 }

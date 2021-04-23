@@ -1,8 +1,14 @@
 require("dotenv").config();
 const express = require("express");
 const router = express.Router();
-const Cryptr = require("cryptr");
-const cryptr = new Cryptr("myTotalySecretKey");
+const base64 = require("base-64");
+const utf8 = require("utf8");
+
+const encrypt = (str) => {
+  const bytes = utf8.encode(str);
+  const encoded = base64.encode(bytes);
+  return encoded;
+};
 
 const {
   typeOne,
@@ -25,10 +31,10 @@ router.get("/type1", async (req, res) => {
     const encryptedArr = questionWithAnswer.allAnswers.map((question) => {
       return {
         option: question.country,
-        answer: cryptr.encrypt(question.answer),
+        answer: encrypt(String(question.answer)),
       };
     });
-    const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedAnswer = encrypt(String(questionWithAnswer.answer));
     const obj = {
       user: {
         question: questionWithAnswer.question,
@@ -46,11 +52,11 @@ router.get("/type1", async (req, res) => {
 router.get("/type2", async (req, res) => {
   try {
     const questionWithAnswer = await typeTwo();
-    const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedAnswer = encrypt(String(questionWithAnswer.answer));
     const encryptedArr = questionWithAnswer.allAnswers.map((question) => {
       return {
         option: question.option,
-        answer: cryptr.encrypt(question.answer),
+        answer: encrypt(String(question.answer)),
       };
     });
     const obj = {
@@ -70,19 +76,19 @@ router.get("/type2", async (req, res) => {
 router.get("/type3", async (req, res) => {
   try {
     const questionWithAnswer = await typeThree();
-    const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedAnswer = encrypt(String(questionWithAnswer.answer));
     const encryptedArr = questionWithAnswer.countries.map((question, i) => {
       if (i === 0) {
         return {
           country: question.country,
           option: "Yes",
-          answer: cryptr.encrypt(question.answer),
+          answer: encrypt(String(question.answer)),
         };
       } else {
         return {
           country: question.country,
           option: "No",
-          answer: cryptr.encrypt(question.answer),
+          answer: encrypt(String(question.answer)),
         };
       }
     });
@@ -103,7 +109,7 @@ router.get("/type3", async (req, res) => {
 router.get("/saved-question", async (req, res) => {
   try {
     const questionWithAnswer = await savedQuestion();
-    const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
+    const encryptedAnswer = encrypt(questionWithAnswer.answer);
     if (questionWithAnswer.questionType === 3) {
       const obj = {
         id: questionWithAnswer.id,
@@ -112,11 +118,11 @@ router.get("/saved-question", async (req, res) => {
           allAnswers: [
             {
               option: questionWithAnswer.option1,
-              answer: cryptr.encrypt(questionWithAnswer.answer1),
+              answer: encrypt(questionWithAnswer.answer1),
             },
             {
               option: questionWithAnswer.option2,
-              answer: cryptr.encrypt(questionWithAnswer.answer2),
+              answer: encrypt(questionWithAnswer.answer2),
             },
           ],
         },
@@ -131,19 +137,19 @@ router.get("/saved-question", async (req, res) => {
           allAnswers: [
             {
               option: questionWithAnswer.option1,
-              answer: cryptr.encrypt(questionWithAnswer.answer1),
+              answer: encrypt(questionWithAnswer.answer1),
             },
             {
               option: questionWithAnswer.option2,
-              answer: cryptr.encrypt(questionWithAnswer.answer2),
+              answer: encrypt(questionWithAnswer.answer2),
             },
             {
               option: questionWithAnswer.option3,
-              answer: cryptr.encrypt(questionWithAnswer.answer3),
+              answer: encrypt(questionWithAnswer.answer3),
             },
             {
               option: questionWithAnswer.option4,
-              answer: cryptr.encrypt(questionWithAnswer.answer4),
+              answer: encrypt(questionWithAnswer.answer4),
             },
           ],
         },
