@@ -71,11 +71,20 @@ router.get("/type3", async (req, res) => {
   try {
     const questionWithAnswer = await typeThree();
     const encryptedAnswer = cryptr.encrypt(questionWithAnswer.answer);
-    const encryptedArr = questionWithAnswer.countries.map((question) => {
-      return {
-        country: question.country,
-        answer: cryptr.encrypt(question.answer),
-      };
+    const encryptedArr = questionWithAnswer.countries.map((question, i) => {
+      if (i === 0) {
+        return {
+          country: question.country,
+          option: "Yes",
+          answer: cryptr.encrypt(question.answer),
+        };
+      } else {
+        return {
+          country: question.country,
+          option: "No",
+          answer: cryptr.encrypt(question.answer),
+        };
+      }
     });
     const obj = {
       user: {

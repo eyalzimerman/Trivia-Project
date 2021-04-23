@@ -148,15 +148,15 @@ const typeThree = async () => {
 
           let theAnswer;
           if (firstCountry.country === answer.country) {
-            theAnswer = true;
+            theAnswer = "Yes";
           } else {
-            theAnswer = false;
+            theAnswer = "No";
           }
 
           const obj = {
             question: newQuestion,
             answer: theAnswer,
-            allAnswers: [true, false],
+            allAnswers: ["Yes", "No"],
             countries: [
               {
                 country: firstCountry.country,

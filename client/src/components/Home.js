@@ -2,7 +2,6 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import decypter from "../Utils/decypter";
 
 export default function Home() {
   const [userName, setUserName] = useState("");
