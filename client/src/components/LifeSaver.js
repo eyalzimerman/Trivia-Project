@@ -8,6 +8,7 @@ export default function LifeSaver({
   lifeSaver,
   setQuestion,
   setCounter,
+  disableSaveButton,
 }) {
   const length = question.user ? question.user.allAnswers.length : null;
 
@@ -48,7 +49,11 @@ export default function LifeSaver({
     <div>
       <div>you have {lifeSaver} life savers left</div>
       {length === 4 && lifeSaver > 0 ? (
-        <Button variant="contained" onClick={() => onClickHandler()}>
+        <Button
+          disabled={disableSaveButton}
+          variant="contained"
+          onClick={() => onClickHandler()}
+        >
           life saver
         </Button>
       ) : null}

@@ -19,12 +19,12 @@ export default function Game({ userName }) {
   const [prevCounter, setPrevCounter] = useState(20);
   const [lives, setLives] = useState(3);
   const [disableButtons, setDisableButtons] = useState(false);
+  const [disableSaveButton, setDisableSaveButton] = useState(false);
   const [gameScore, setGameScore] = useState(0);
   const [lifeSaver, setLifeSaver] = useState(2);
 
   const [currentQuestionIdArray, setCurrentQuestionIdArray] = useState([]);
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
-  const [answerTimeClicked, setAnswerTimeClicked] = useState();
 
   const [ratedNewQuestions, setRatedNewQuestions] = useState([]);
 
@@ -33,6 +33,7 @@ export default function Game({ userName }) {
       setIsAnswerVisible(true);
       setIsRatingVisible(true);
       setDisableButtons(true);
+      setDisableSaveButton(true);
       setLives((prev) => prev - 1);
     } else {
       const timer =
@@ -61,7 +62,6 @@ export default function Game({ userName }) {
     const answer = decypter(question.answer);
     if (answer === value) {
       setDisableButtons(true);
-      setAnswerTimeClicked(counter);
       const timeItTookToAnswer = prevCounter - counter;
       const score = Math.floor(
         (1 - timeItTookToAnswer / prevCounter) * 70 + 30
@@ -177,6 +177,7 @@ export default function Game({ userName }) {
             lifeSaver={lifeSaver}
             setQuestion={setQuestion}
             setCounter={setCounter}
+            disableSaveButton={disableSaveButton}
           />
           <Question question={question} />
           {question.user &&
