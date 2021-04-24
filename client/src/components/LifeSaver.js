@@ -59,6 +59,7 @@ export default function LifeSaver({
           disabled={disableSaveButton}
           variant="contained"
           onClick={() => onClickHandler()}
+          id="life-saver-button"
         >
           <HelpIcon />
         </Button>

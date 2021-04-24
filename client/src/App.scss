@@ -1,6 +1,10 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 #home-container {
   display: flex;
   flex-direction: column;
@@ -164,10 +168,21 @@
   }
 }
 #life-saver-container {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  right: 15em;
+  top: 4em;
+  margin-top: 2em;
 }
 .life-saver-message {
   font-size: 1.5em;
 }
 #lives {
   color: rgb(238, 119, 110);
+}
+#life-saver-button {
+  width: fit-content;
+  margin: auto;
 }
