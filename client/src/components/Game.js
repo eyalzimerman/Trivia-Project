@@ -7,6 +7,7 @@ import Answer from "./Answer";
 import Question from "./Question";
 import Grading from "./Grading";
 import Lose from "./Lose";
+import LifeSaver from "./LifeSaver";
 
 export default function Game({ userName }) {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -19,6 +20,7 @@ export default function Game({ userName }) {
   const [lives, setLives] = useState(3);
   const [disableButtons, setDisableButtons] = useState(false);
   const [gameScore, setGameScore] = useState(0);
+  const [lifeSaver, setLifeSaver] = useState(2);
 
   const [currentQuestionIdArray, setCurrentQuestionIdArray] = useState([]);
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
@@ -64,7 +66,12 @@ export default function Game({ userName }) {
       const score = Math.floor(
         (1 - timeItTookToAnswer / prevCounter) * 70 + 30
       );
-      setGameScore((prev) => (prev += score));
+
+      if (question.saved === true) {
+        setGameScore((prev) => (prev += 30));
+      } else {
+        setGameScore((prev) => (prev += score));
+      }
     } else {
       setDisableButtons(true);
       setLives((prev) => prev - 1);
@@ -164,6 +171,13 @@ export default function Game({ userName }) {
         </div>
       ) : (
         <div>
+          <LifeSaver
+            question={question}
+            setLifeSaver={setLifeSaver}
+            lifeSaver={lifeSaver}
+            setQuestion={setQuestion}
+            setCounter={setCounter}
+          />
           <Question question={question} />
           {question.user &&
             question.user.allAnswers.map((answer, i) => {

@@ -37,8 +37,14 @@ export default function Answer({
       <span>
         {isAnswerVisible && question.user.allAnswers.length === 4
           ? decypter(answer.answer)
-          : isAnswerVisible && question.user.allAnswers.length === 2
+          : isAnswerVisible &&
+            question.user.allAnswers.length === 2 &&
+            question.saved == null
           ? decypter(answer.answer) + " " + answer.country
+          : isAnswerVisible &&
+            question.user.allAnswers.length === 2 &&
+            question.saved
+          ? decypter(answer.answer)
           : null}
       </span>
     </div>
