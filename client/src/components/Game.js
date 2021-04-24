@@ -207,6 +207,9 @@ export default function Game({ userName }) {
             setQuestion={setQuestion}
             setCounter={setCounter}
             disableSaveButton={disableSaveButton}
+            setProgress={setProgress}
+            prevCounter={prevCounter}
+            counter={counter}
           />
           {question.user &&
             question.user.allAnswers.map((answer, i) => {

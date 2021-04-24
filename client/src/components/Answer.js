@@ -31,7 +31,7 @@ export default function Answer({
     <div className="option-div">
       <StyledButton
         onClick={(e) => answerClickEvent(e.target.innerText)}
-        variant="outlined"
+        variant="contained"
         disabled={disableButtons}
       >
         {answer.option}

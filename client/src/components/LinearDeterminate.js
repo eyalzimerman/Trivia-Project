@@ -22,7 +22,11 @@ export default function LinearDeterminate({
 
   return (
     <div className={classes.root}>
-      <LinearProgress variant="determinate" value={progress} />
+      <LinearProgress
+        variant="determinate"
+        value={progress}
+        style={{ height: "2vh", borderRadius: "5px" }}
+      />
     </div>
   );
 }

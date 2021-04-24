@@ -10,6 +10,9 @@ export default function LifeSaver({
   setQuestion,
   setCounter,
   disableSaveButton,
+  setProgress,
+  counter,
+  prevCounter,
 }) {
   const length = question.user ? question.user.allAnswers.length : null;
 
@@ -40,7 +43,16 @@ export default function LifeSaver({
   };
 
   const onClickHandler = () => {
-    setCounter((prev) => (prev += 10));
+    if (counter + 10 > prevCounter) {
+      setCounter(prevCounter);
+      setProgress(100);
+    } else {
+      setCounter((prev) => (prev += 10));
+      setProgress(
+        (prev) =>
+          (prev += 20 * (100 / (prevCounter * 2))) + 100 / (prevCounter * 2)
+      );
+    }
     setLifeSaver((prev) => prev - 1);
     removeFromAnswers();
   };
