@@ -27,7 +27,6 @@ export default function Grading({
       const temp = [...ratedNewQuestions];
       temp.push(questionToSave);
       setRatedNewQuestions(temp);
-      console.log(ratedNewQuestions);
     }
   };
   useEffect(() => {

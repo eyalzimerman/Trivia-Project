@@ -31,7 +31,6 @@ export default function LifeSaver({
     indexes.sort((a, b) => {
       return a - b;
     });
-    console.log(answer);
     temp.user.allAnswers.splice(indexes[0], 1);
     indexes.shift();
     temp.user.allAnswers.splice(indexes[0] - 1, 1);

@@ -28,7 +28,6 @@ const {
 router.get("/type1", async (req, res) => {
   try {
     const questionWithAnswer = await typeOne();
-    console.log(questionWithAnswer);
     const encryptedArr = questionWithAnswer.allAnswers.map((question) => {
       return {
         option: question.country,
@@ -126,7 +125,6 @@ router.get("/type3", async (req, res) => {
 router.get("/saved-question", async (req, res) => {
   try {
     const questionWithAnswer = await savedQuestion();
-    console.log(questionWithAnswer);
     const encryptedAnswer = encrypt(questionWithAnswer.answer);
     if (questionWithAnswer.questionType === 3) {
       let obj;
@@ -255,12 +253,10 @@ router.post("/user", async (req, res) => {
 //update saved question with new grade and new amount
 router.patch("/update", async (req, res) => {
   const { body } = req;
-  console.log(body);
   try {
     await updateSavedQuestion(body);
     return res.status(200).json({ message: "Updated successfully" });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({ error: "Could not update saved question" });
   }
 });
