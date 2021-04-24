@@ -12,10 +12,12 @@ const StyledButton = withStyles({
     height: 48,
     padding: "0 30px",
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    marginTop: "1em",
   },
   label: {
     textTransform: "capitalize",
   },
+  className: "answer",
 })(Button);
 
 export default function Answer({
@@ -28,6 +30,7 @@ export default function Answer({
   return (
     <div>
       <StyledButton
+        className="answer"
         onClick={(e) => answerClickEvent(e.target.innerText)}
         variant="outlined"
         disabled={disableButtons}

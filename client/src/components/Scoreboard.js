@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import UserRow from "./UserRow";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 export default function Scoreboard() {
   const [scoreboard, setScoreboard] = useState([]);
@@ -15,10 +17,22 @@ export default function Scoreboard() {
     })();
   }, []);
   return (
-    <div>
+    <div id="scoreboard-container">
+      <h1 id="scoreboard-title">Scoreboard</h1>
       {scoreboard.map((user, i) => {
-        return <UserRow key={`UserRow-${i}`} user={user} />;
+        return <UserRow index={i} key={`UserRow-${i}`} user={user} />;
       })}
+      <div id="div-scoreboard-button">
+        <Link to="/">
+          <Button
+            id="scoreboard-home-button"
+            variant="contained"
+            color="primary"
+          >
+            Home
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

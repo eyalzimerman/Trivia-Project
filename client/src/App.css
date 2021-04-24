@@ -1,1 +1,123 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#home-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  min-height: 70vh;
+}
+
+#main-title {
+  text-align: center;
+  font-size: 10em;
+}
+
+#login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#login-container a {
+  margin-bottom: 1em;
+  text-decoration: none;
+}
+
+#username-input {
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+.start-game-button {
+  width: 15em;
+}
+
+.scoreboard-button {
+  width: 15em;
+}
+
+#scoreboard-title {
+  text-align: center;
+  font-size: 4em;
+}
+
+.user-row {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
+  width: 60vw;
+  margin: auto;
+  margin-bottom: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  position: relative;
+}
+
+.scoreboard-index {
+  position: absolute;
+  left: 0.5em;
+  font-size: 2em;
+}
+
+.scoreboard-username {
+  position: absolute;
+  left: 2em;
+  font-size: 2em;
+}
+
+.scoreboard-score {
+  position: absolute;
+  right: 1em;
+  font-size: 2em;
+}
+
+#div-scoreboard-button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#div-scoreboard-button a {
+  text-decoration: none;
+}
+
+#scoreboard-home-button {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+/*# sourceMappingURL=App.css.map */

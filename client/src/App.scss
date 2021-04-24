@@ -1,0 +1,86 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+}
+#main-title {
+  text-align: center;
+  font-size: 10em;
+}
+#login-container {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  & a {
+    margin-bottom: 1em;
+    text-decoration: none;
+  }
+}
+#username-input {
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+.start-game-button {
+  width: 15em;
+}
+.scoreboard-button {
+  width: 15em;
+}
+
+#scoreboard-title {
+  text-align: center;
+  font-size: 4em;
+}
+.user-row {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 5px;
+  text-align: center;
+  width: 60vw;
+  margin: auto;
+  margin-bottom: 0.5em;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 3em;
+  position: relative;
+}
+.scoreboard-index {
+  position: absolute;
+  left: 0.5em;
+  font-size: 2em;
+}
+.scoreboard-username {
+  position: absolute;
+  left: 2em;
+  font-size: 2em;
+}
+.scoreboard-score {
+  position: absolute;
+  right: 1em;
+  font-size: 2em;
+}
+#div-scoreboard-button {
+  width: fit-content;
+  margin: auto;
+  align-self: center;
+  & a {
+    text-decoration: none;
+  }
+}
+#scoreboard-home-button {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
