@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import decypter from "../Utils/decypter";
+import HelpIcon from "@material-ui/icons/Help";
 
 export default function LifeSaver({
   question,
@@ -45,15 +46,21 @@ export default function LifeSaver({
   };
 
   return (
-    <div>
-      <div>you have {lifeSaver} life savers left</div>
+    <div id="life-saver-container">
+      {lifeSaver > 0 ? (
+        <div className="life-saver-message">
+          you have {lifeSaver} life savers
+        </div>
+      ) : (
+        <div className="life-saver-message">You used two life savers</div>
+      )}
       {length === 4 && lifeSaver > 0 ? (
         <Button
           disabled={disableSaveButton}
           variant="contained"
           onClick={() => onClickHandler()}
         >
-          life saver
+          <HelpIcon />
         </Button>
       ) : null}
     </div>

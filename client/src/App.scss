@@ -96,8 +96,9 @@
 #rating-container {
   width: fit-content;
   margin: auto;
-  position: relative;
+  position: fixed;
   top: 1em;
+  left: 2vw;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.876);
   height: fit-content;
@@ -161,4 +162,12 @@
   & a {
     text-decoration: none;
   }
+}
+#life-saver-container {
+}
+.life-saver-message {
+  font-size: 1.5em;
+}
+#lives {
+  color: rgb(238, 119, 110);
 }

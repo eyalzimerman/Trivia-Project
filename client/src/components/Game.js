@@ -6,9 +6,9 @@ import axios from "axios";
 import Answer from "./Answer";
 import Question from "./Question";
 import Grading from "./Grading";
-import Lose from "./Lose";
 import LifeSaver from "./LifeSaver";
-import Timer from "./Timer";
+import LinearDeterminate from "./LinearDeterminate";
+import FavoriteIcon from "@material-ui/icons/Favorite";
 
 export default function Game({ userName }) {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -28,6 +28,7 @@ export default function Game({ userName }) {
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
 
   const [ratedNewQuestions, setRatedNewQuestions] = useState([]);
+  const [progress, setProgress] = useState(100);
 
   useEffect(() => {
     if (counter === 0) {
@@ -139,6 +140,8 @@ export default function Game({ userName }) {
     setSkipOrRate((prev) => prev + 1);
     setIsAnswerVisible(false);
     setIsRatingVisible(false);
+    setDisableSaveButton(false);
+    setProgress(100);
     if (prevCounter === 5) {
       setCounter(5);
     } else {
@@ -149,13 +152,10 @@ export default function Game({ userName }) {
 
   return (
     <div>
-      {/* <Timer counter={counter} /> */}
-      <div id="lives">{lives}</div>
       {lives === 0 ? (
         <div>
           <div id="end-game-user">{userName}</div>
           <div id="game-score">{gameScore} - Points</div>
-          {/* <Lose /> */}
           <div id="end-game-button-container">
             <Link to="/scoreboard">
               <Button
@@ -175,8 +175,31 @@ export default function Game({ userName }) {
         </div>
       ) : (
         <div>
+          <div id="lives">
+            {lives === 3 ? (
+              <div>
+                {" "}
+                <FavoriteIcon /> <FavoriteIcon /> <FavoriteIcon />
+              </div>
+            ) : lives === 2 ? (
+              <div>
+                {" "}
+                <FavoriteIcon /> <FavoriteIcon />
+              </div>
+            ) : lives === 1 ? (
+              <div>
+                <FavoriteIcon />
+              </div>
+            ) : null}
+          </div>
           <Question question={question} />
           <div id="timer">{counter}</div>
+          <LinearDeterminate
+            counter={counter}
+            prevCounter={prevCounter}
+            progress={progress}
+            setProgress={setProgress}
+          />
           <LifeSaver
             question={question}
             setLifeSaver={setLifeSaver}
