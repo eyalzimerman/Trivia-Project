@@ -59,25 +59,27 @@ export default function Grading({
     }
   }, [value]);
   return (
-    <div id="rating-container">
-      <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend">Rate Question:</Typography>
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-        />
-      </Box>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={onRateOrSkipClicking}
-        id="skip-button"
-      >
-        Skip
-      </Button>
+    <div id="rating-background">
+      <div id="rating-container">
+        <Box component="fieldset" mb={3} borderColor="transparent">
+          <Typography component="legend">Rate Question:</Typography>
+          <Rating
+            name="simple-controlled"
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+          />
+        </Box>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={onRateOrSkipClicking}
+          id="skip-button"
+        >
+          Skip
+        </Button>
+      </div>
     </div>
   );
 }
