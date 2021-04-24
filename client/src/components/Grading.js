@@ -59,7 +59,7 @@ export default function Grading({
     }
   }, [value]);
   return (
-    <div>
+    <div id="rating-container">
       <Box component="fieldset" mb={3} borderColor="transparent">
         <Typography component="legend">Rate Question:</Typography>
         <Rating
@@ -74,6 +74,7 @@ export default function Grading({
         variant="contained"
         color="primary"
         onClick={onRateOrSkipClicking}
+        id="skip-button"
       >
         Skip
       </Button>

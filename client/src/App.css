@@ -120,4 +120,44 @@
   margin-top: 1em;
   font-size: 1.2em;
 }
+
+#question {
+  text-align: center;
+  font-size: 2em;
+}
+
+#rating-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+
+#skip-button {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.option-div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.answer {
+  text-align: center;
+}
 /*# sourceMappingURL=App.css.map */

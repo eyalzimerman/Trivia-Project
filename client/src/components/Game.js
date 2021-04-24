@@ -8,6 +8,7 @@ import Question from "./Question";
 import Grading from "./Grading";
 import Lose from "./Lose";
 import LifeSaver from "./LifeSaver";
+import Timer from "./Timer";
 
 export default function Game({ userName }) {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -150,12 +151,9 @@ export default function Game({ userName }) {
     <div>
       <div>{userName}</div>
       <div>{counter}</div>
+      {/* <Timer counter={counter} /> */}
       <div>{lives}</div>
-      <Link to="/">
-        <Button variant="contained" color="primary">
-          Home
-        </Button>
-      </Link>
+
       {lives === 0 ? (
         <div>
           <div>{gameScore}</div>
@@ -171,6 +169,7 @@ export default function Game({ userName }) {
         </div>
       ) : (
         <div>
+          <Question question={question} />
           <LifeSaver
             question={question}
             setLifeSaver={setLifeSaver}
@@ -179,7 +178,6 @@ export default function Game({ userName }) {
             setCounter={setCounter}
             disableSaveButton={disableSaveButton}
           />
-          <Question question={question} />
           {question.user &&
             question.user.allAnswers.map((answer, i) => {
               return (
@@ -205,6 +203,11 @@ export default function Game({ userName }) {
           ) : null}
         </div>
       )}
+      <Link to="/">
+        <Button variant="contained" color="primary">
+          Home
+        </Button>
+      </Link>
     </div>
   );
 }

@@ -84,3 +84,32 @@
   margin-top: 1em;
   font-size: 1.2em;
 }
+#question {
+  text-align: center;
+  font-size: 2em;
+}
+#rating-container {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+#skip-button {
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.option-div {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.answer {
+  text-align: center;
+}
+// .text-button {
+//   text-transform: none;
+// }

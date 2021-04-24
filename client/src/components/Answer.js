@@ -12,11 +12,12 @@ const StyledButton = withStyles({
     padding: "0 30px",
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
     marginTop: "1em",
+    fontSize: "2em",
+    minWidth: "10em",
   },
   label: {
     textTransform: "capitalize",
   },
-  className: "answer",
 })(Button);
 
 export default function Answer({
@@ -27,16 +28,15 @@ export default function Answer({
   disableButtons,
 }) {
   return (
-    <div>
+    <div className="option-div">
       <StyledButton
-        className="answer"
         onClick={(e) => answerClickEvent(e.target.innerText)}
         variant="outlined"
         disabled={disableButtons}
       >
         {answer.option}
       </StyledButton>
-      <span>
+      <div className="answer">
         {isAnswerVisible && question.user.allAnswers.length === 4
           ? decypter(answer.answer)
           : isAnswerVisible &&
@@ -48,7 +48,7 @@ export default function Answer({
             question.saved
           ? decypter(answer.answer)
           : null}
-      </span>
+      </div>
     </div>
   );
 }
