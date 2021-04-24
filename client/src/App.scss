@@ -88,11 +88,23 @@
   text-align: center;
   font-size: 2em;
 }
+#timer {
+  width: fit-content;
+  margin: auto;
+  font-size: 3em;
+}
 #rating-container {
   width: fit-content;
   margin: auto;
   position: relative;
+  top: 1em;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.876);
+  height: fit-content;
+  padding-bottom: 1em;
+  padding-right: 4em;
+  padding-left: 4em;
+  border-radius: 5px;
 }
 #rating-background {
   margin: 0;
@@ -100,14 +112,12 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.089);
+  background-color: rgba(0, 0, 0, 0.329);
 }
-#skip-button {
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
+#rate-question {
+  font-size: 2em;
 }
+
 .option-div {
   width: fit-content;
   margin: auto;
@@ -117,7 +127,38 @@
 }
 .answer {
   text-align: center;
+  font-size: 1.5em;
 }
-// .text-button {
-//   text-transform: none;
-// }
+#lives {
+  text-align: center;
+  font-size: 2em;
+}
+#end-game-user {
+  text-align: center;
+  font-size: 3em;
+}
+#game-score {
+  text-align: center;
+  font-size: 3em;
+}
+#end-game-button-container {
+  width: fit-content;
+  margin: auto;
+  margin-top: 7em;
+  display: flex;
+  justify-content: space-between;
+  & a {
+    text-decoration: none;
+  }
+}
+#game-scoreboard-button {
+  margin-right: 5em;
+}
+#game-home-button-div {
+  width: fit-content;
+  margin: auto;
+  margin-top: 5em;
+  & a {
+    text-decoration: none;
+  }
+}

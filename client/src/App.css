@@ -126,13 +126,30 @@
   font-size: 2em;
 }
 
+#timer {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  font-size: 3em;
+}
+
 #rating-container {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
   position: relative;
+  top: 1em;
   text-align: center;
+  background-color: rgba(255, 255, 255, 0.876);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-bottom: 1em;
+  padding-right: 4em;
+  padding-left: 4em;
+  border-radius: 5px;
 }
 
 #rating-background {
@@ -141,14 +158,11 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.089);
+  background-color: rgba(0, 0, 0, 0.329);
 }
 
-#skip-button {
-  margin: auto;
-  position: absolute;
-  left: 0;
-  right: 0;
+#rate-question {
+  font-size: 2em;
 }
 
 .option-div {
@@ -168,5 +182,55 @@
 
 .answer {
   text-align: center;
+  font-size: 1.5em;
+}
+
+#lives {
+  text-align: center;
+  font-size: 2em;
+}
+
+#end-game-user {
+  text-align: center;
+  font-size: 3em;
+}
+
+#game-score {
+  text-align: center;
+  font-size: 3em;
+}
+
+#end-game-button-container {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-top: 7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#end-game-button-container a {
+  text-decoration: none;
+}
+
+#game-scoreboard-button {
+  margin-right: 5em;
+}
+
+#game-home-button-div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  margin-top: 5em;
+}
+
+#game-home-button-div a {
+  text-decoration: none;
 }
 /*# sourceMappingURL=App.css.map */

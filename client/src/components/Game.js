@@ -149,27 +149,34 @@ export default function Game({ userName }) {
 
   return (
     <div>
-      <div>{userName}</div>
-      <div>{counter}</div>
       {/* <Timer counter={counter} /> */}
-      <div>{lives}</div>
-
+      <div id="lives">{lives}</div>
       {lives === 0 ? (
         <div>
-          <div>{gameScore}</div>
-          <Lose />
-          <Link to="/scoreboard">
-            <Button variant="contained" color="primary">
-              Scoreboard
-            </Button>
-          </Link>
-          <Link to="/">
-            <Button variant="contained">New Game</Button>
-          </Link>
+          <div id="end-game-user">{userName}</div>
+          <div id="game-score">{gameScore} - Points</div>
+          {/* <Lose /> */}
+          <div id="end-game-button-container">
+            <Link to="/scoreboard">
+              <Button
+                id="game-scoreboard-button"
+                variant="contained"
+                color="primary"
+              >
+                Scoreboard
+              </Button>
+            </Link>
+            <Link to="/">
+              <Button id="new-game-button" variant="contained">
+                New Game
+              </Button>
+            </Link>
+          </div>
         </div>
       ) : (
         <div>
           <Question question={question} />
+          <div id="timer">{counter}</div>
           <LifeSaver
             question={question}
             setLifeSaver={setLifeSaver}
@@ -203,11 +210,13 @@ export default function Game({ userName }) {
           ) : null}
         </div>
       )}
-      <Link to="/">
-        <Button variant="contained" color="primary">
-          Home
-        </Button>
-      </Link>
+      <div id="game-home-button-div">
+        <Link to="/">
+          <Button variant="contained" color="primary">
+            Home
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 }

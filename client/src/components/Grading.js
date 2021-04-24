@@ -62,8 +62,12 @@ export default function Grading({
     <div id="rating-background">
       <div id="rating-container">
         <Box component="fieldset" mb={3} borderColor="transparent">
-          <Typography component="legend">Rate Question:</Typography>
+          <Typography id="rate-question" component="legend">
+            Rate Question:
+          </Typography>
           <Rating
+            id="stars"
+            size="large"
             name="simple-controlled"
             value={value}
             onChange={(event, newValue) => {
