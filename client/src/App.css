@@ -183,7 +183,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-bottom: 1em;
+  margin-bottom: 0.1em;
 }
 
 .answer {
@@ -232,8 +232,12 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  position: fixed;
+  bottom: 1.5em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin: auto;
-  margin-top: 5em;
 }
 
 #game-home-button-div a {

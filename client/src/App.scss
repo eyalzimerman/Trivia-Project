@@ -128,7 +128,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
+  margin-bottom: 0.1em;
 }
 .answer {
   text-align: center;
@@ -161,8 +161,11 @@ body {
 }
 #game-home-button-div {
   width: fit-content;
+  position: fixed;
+  bottom: 1.5em;
+  left: 50%;
+  transform: translateX(-50%);
   margin: auto;
-  margin-top: 5em;
   & a {
     text-decoration: none;
   }
