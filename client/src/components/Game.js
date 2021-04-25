@@ -9,6 +9,7 @@ import Grading from "./Grading";
 import LifeSaver from "./LifeSaver";
 import LinearDeterminate from "./LinearDeterminate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import Lose from "./Lose";
 
 export default function Game({ userName }) {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -151,26 +152,7 @@ export default function Game({ userName }) {
   return (
     <div>
       {lives === 0 ? (
-        <div>
-          <div id="end-game-user">{userName}</div>
-          <div id="game-score">{gameScore} - Points</div>
-          <div id="end-game-button-container">
-            <Link to="/scoreboard">
-              <Button
-                id="game-scoreboard-button"
-                variant="contained"
-                color="primary"
-              >
-                Scoreboard
-              </Button>
-            </Link>
-            <Link to="/">
-              <Button id="new-game-button" variant="contained">
-                New Game
-              </Button>
-            </Link>
-          </div>
-        </div>
+        <Lose gameScore={gameScore} userName={userName} />
       ) : (
         <div>
           <div id="lives">
