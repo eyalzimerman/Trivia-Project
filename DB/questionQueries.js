@@ -212,65 +212,69 @@ const allSavedQuestions = async () => {
 };
 
 //Adds a new questions to the saved questions database
-const addSavedQuestion = async (obj) => {
-  if (obj.user.allAnswers.length === 4 && obj.user.question.includes("Which")) {
-    await SavedQuestion.create({
-      strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0].option,
-      option2: obj.user.allAnswers[1].option,
-      option3: obj.user.allAnswers[2].option,
-      option4: obj.user.allAnswers[3].option,
-      answer1: obj.user.allAnswers[0].answer,
-      answer2: obj.user.allAnswers[1].answer,
-      answer3: obj.user.allAnswers[2].answer,
-      answer4: obj.user.allAnswers[3].answer,
-      answer: obj.answer,
-      questionType: 1,
-      grade: obj.grade,
-      amount: 1,
-    });
-  } else if (
-    obj.user.allAnswers.length === 4 &&
-    !obj.user.question.includes("Which")
-  ) {
-    await SavedQuestion.create({
-      strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0].option,
-      option2: obj.user.allAnswers[1].option,
-      option3: obj.user.allAnswers[2].option,
-      option4: obj.user.allAnswers[3].option,
-      answer1: obj.user.allAnswers[0].answer,
-      answer2: obj.user.allAnswers[1].answer,
-      answer3: obj.user.allAnswers[2].answer,
-      answer4: obj.user.allAnswers[3].answer,
-      answer: obj.answer,
-      questionType: 2,
-      grade: obj.grade,
-      amount: 1,
-    });
-  } else {
-    await SavedQuestion.create({
-      strQuestion: obj.user.question,
-      option1: obj.user.allAnswers[0].country,
-      option2: obj.user.allAnswers[1].country,
-      option3: null,
-      option4: null,
-      answer1: obj.user.allAnswers[0].answer,
-      answer2: obj.user.allAnswers[1].answer,
-      answer3: null,
-      answer4: null,
-      answer: obj.answer,
-      questionType: 3,
-      grade: obj.grade,
-      amount: 1,
-    });
-  }
+const addSavedQuestion = async (arr) => {
+  arr.forEach(async (obj) => {
+    if (
+      obj.user.allAnswers.length === 4 &&
+      obj.user.question.includes("Which")
+    ) {
+      await SavedQuestion.create({
+        strQuestion: obj.user.question,
+        option1: obj.user.allAnswers[0].option,
+        option2: obj.user.allAnswers[1].option,
+        option3: obj.user.allAnswers[2].option,
+        option4: obj.user.allAnswers[3].option,
+        answer1: obj.user.allAnswers[0].answer,
+        answer2: obj.user.allAnswers[1].answer,
+        answer3: obj.user.allAnswers[2].answer,
+        answer4: obj.user.allAnswers[3].answer,
+        answer: obj.answer,
+        questionType: 1,
+        grade: obj.grade,
+        amount: 1,
+      });
+    } else if (
+      obj.user.allAnswers.length === 4 &&
+      !obj.user.question.includes("Which")
+    ) {
+      await SavedQuestion.create({
+        strQuestion: obj.user.question,
+        option1: obj.user.allAnswers[0].option,
+        option2: obj.user.allAnswers[1].option,
+        option3: obj.user.allAnswers[2].option,
+        option4: obj.user.allAnswers[3].option,
+        answer1: obj.user.allAnswers[0].answer,
+        answer2: obj.user.allAnswers[1].answer,
+        answer3: obj.user.allAnswers[2].answer,
+        answer4: obj.user.allAnswers[3].answer,
+        answer: obj.answer,
+        questionType: 2,
+        grade: obj.grade,
+        amount: 1,
+      });
+    } else {
+      await SavedQuestion.create({
+        strQuestion: obj.user.question,
+        option1: obj.user.allAnswers[0].country,
+        option2: obj.user.allAnswers[1].country,
+        option3: null,
+        option4: null,
+        answer1: obj.user.allAnswers[0].answer,
+        answer2: obj.user.allAnswers[1].answer,
+        answer3: null,
+        answer4: null,
+        answer: obj.answer,
+        questionType: 3,
+        grade: obj.grade,
+        amount: 1,
+      });
+    }
+  });
 };
 
 // const addManyQuestions = async () => {
-//   await 
+//   await
 // }
-
 
 //Updates a saved question's grade and amount
 const updateSavedQuestion = async (obj) => {

@@ -126,9 +126,7 @@ export default function Game({ userName }) {
         };
         try {
           await axios.post("/api/trivia/user", user);
-          for (const question of ratedNewQuestions) {
-            await axios.post("/api/trivia/new", question);
-          }
+          await axios.post("/api/trivia/new", ratedNewQuestions);
         } catch (error) {
           console.log("User failed");
         }
