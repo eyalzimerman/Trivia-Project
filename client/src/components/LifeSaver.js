@@ -43,16 +43,11 @@ export default function LifeSaver({
   };
 
   const onClickHandler = () => {
-    if (counter + 10 > prevCounter) {
-      setCounter(prevCounter);
-      setProgress(100);
-    } else {
-      setCounter((prev) => (prev += 10));
-      setProgress(
-        (prev) =>
-          (prev += 20 * (100 / (prevCounter * 2))) + 100 / (prevCounter * 2)
-      );
-    }
+    setCounter((prev) => (prev += 10));
+    setProgress(
+      (prev) =>
+        (prev += 20 * (100 / (prevCounter * 2))) + 100 / (prevCounter * 2)
+    );
     setLifeSaver((prev) => prev - 1);
     removeFromAnswers();
   };

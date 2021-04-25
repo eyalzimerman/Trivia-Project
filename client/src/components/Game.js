@@ -193,7 +193,7 @@ export default function Game({ userName }) {
             ) : null}
           </div>
           <Question question={question} />
-          <div id="timer">{counter}</div>
+          <div id="timer">{Math.round(counter)}</div>
           <LinearDeterminate
             counter={counter}
             prevCounter={prevCounter}
