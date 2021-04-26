@@ -12,6 +12,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import Lose from "./Lose";
 
 export default function Game({ userName }) {
+  // States
   const [questionNumber, setQuestionNumber] = useState(1);
   const [question, setQuestion] = useState({});
   const [counter, setCounter] = useState(20);
@@ -31,6 +32,7 @@ export default function Game({ userName }) {
   const [ratedNewQuestions, setRatedNewQuestions] = useState([]);
   const [progress, setProgress] = useState(100);
 
+  // Timer for each question, decrease by 0.5 sec
   useEffect(() => {
     if (counter === 0) {
       setIsAnswerVisible(true);
@@ -47,6 +49,7 @@ export default function Game({ userName }) {
     }
   }, [counter]);
 
+  // set the first question when the game begin, get all saved question when the game begin
   useEffect(() => {
     (async () => {
       const num = Math.floor(Math.random() * 3) + 1;
@@ -61,6 +64,7 @@ export default function Game({ userName }) {
     })();
   }, []);
 
+  // Func when user click on answer, calculate score and decrease lives if he wrong
   const answerClickEvent = (value) => {
     const answer = decypter(question.answer);
     if (answer === value) {
@@ -84,6 +88,7 @@ export default function Game({ userName }) {
     setIsRatingVisible(true);
   };
 
+  // Flow game, get the next question after rating or skipping
   useEffect(() => {
     setQuestionNumber((prev) => (prev += 1));
 
@@ -118,6 +123,7 @@ export default function Game({ userName }) {
     })();
   }, [skipOrRate]);
 
+  // End of the game, new answer and user name+ score send to database
   useEffect(() => {
     (async () => {
       if (lives === 0) {
@@ -135,6 +141,7 @@ export default function Game({ userName }) {
     })();
   }, [lives]);
 
+  // Func after clicking on rate or skip
   const onRateOrSkipClicking = () => {
     setSkipOrRate((prev) => prev + 1);
     setIsAnswerVisible(false);
@@ -156,21 +163,9 @@ export default function Game({ userName }) {
       ) : (
         <div>
           <div id="lives">
-            {lives === 3 ? (
-              <div>
-                {" "}
-                <FavoriteIcon /> <FavoriteIcon /> <FavoriteIcon />
-              </div>
-            ) : lives === 2 ? (
-              <div>
-                {" "}
-                <FavoriteIcon /> <FavoriteIcon />
-              </div>
-            ) : lives === 1 ? (
-              <div>
-                <FavoriteIcon />
-              </div>
-            ) : null}
+            {Array.from(Array(lives).keys()).map((live, i) => (
+              <FavoriteIcon key={i} />
+            ))}
           </div>
           <Question question={question} />
           <div id="timer">{Math.round(counter)}</div>
@@ -189,7 +184,6 @@ export default function Game({ userName }) {
             disableSaveButton={disableSaveButton}
             setProgress={setProgress}
             prevCounter={prevCounter}
-            counter={counter}
           />
           {question.user &&
             question.user.allAnswers.map((answer, i) => {

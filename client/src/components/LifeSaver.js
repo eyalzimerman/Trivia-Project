@@ -11,11 +11,11 @@ export default function LifeSaver({
   setCounter,
   disableSaveButton,
   setProgress,
-  counter,
   prevCounter,
 }) {
   const length = question.user ? question.user.allAnswers.length : null;
 
+  // Remove two answers after clicking on life saver button
   const removeFromAnswers = () => {
     const temp = Object.assign({}, question);
     const tempAnswers = temp.user.allAnswers.map((answer) => {
@@ -42,6 +42,7 @@ export default function LifeSaver({
     setQuestion(temp);
   };
 
+  // Func after clicking on life saver, set the timer and calls to removeFromAnswers function
   const onClickHandler = () => {
     setCounter((prev) => (prev += 10));
     setProgress(

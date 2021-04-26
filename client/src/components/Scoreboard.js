@@ -6,6 +6,8 @@ import Button from "@material-ui/core/Button";
 
 export default function Scoreboard() {
   const [scoreboard, setScoreboard] = useState([]);
+
+  // Get the scoreboard from database
   useEffect(() => {
     (async () => {
       try {

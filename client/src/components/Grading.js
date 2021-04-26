@@ -16,6 +16,9 @@ export default function Grading({
   const [value, setValue] = useState(0);
 
   const questionToSave = Object.assign({}, question);
+
+  // Func after clicking on rate, if its saved question - send axios request to update the database
+  // If new question that rated save in state to send later
   const onRateHandler = async () => {
     if ((questionNumber - 1) % 3 === 0) {
       try {
@@ -29,6 +32,8 @@ export default function Grading({
       setRatedNewQuestions(temp);
     }
   };
+
+  // Use effect that listen to click on rate
   useEffect(() => {
     if (value !== 0) {
       questionToSave.answer = decypter(questionToSave.answer);
