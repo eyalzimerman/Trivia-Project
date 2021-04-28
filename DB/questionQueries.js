@@ -290,9 +290,16 @@ const updateSavedQuestion = async (obj) => {
   );
 };
 
-//Creates a user with a user name and a score
+//Creates a user with a user name and password
 const createUser = async (obj) => {
-  const user = await User.create({ name: obj.name, score: obj.score });
+  await User.create({
+    name: obj.name,
+    password: obj.password,
+  });
+};
+
+// Adds user with score to scoreboard
+const addScore = async (user) => {
   await Scoreboard.create({
     userId: user.id,
     name: user.name,
@@ -316,4 +323,5 @@ module.exports = {
   createUser,
   getOrderedScoreboard,
   allSavedQuestions,
+  addScore,
 };
