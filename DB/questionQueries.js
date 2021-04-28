@@ -298,6 +298,16 @@ const createUser = async (obj) => {
   });
 };
 
+//Checks if user exists in the database
+const checkUserExist = async (user) => {
+  const savedUser = await User.findOne({ where: { name: user.name } });
+  if (!savedUser) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
 // Adds user with score to scoreboard
 const addScore = async (user) => {
   await Scoreboard.create({
@@ -324,4 +334,5 @@ module.exports = {
   getOrderedScoreboard,
   allSavedQuestions,
   addScore,
+  checkUserExist,
 };
