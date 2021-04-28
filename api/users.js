@@ -10,7 +10,7 @@ const {
   findUser,
 } = require("../DB/questionQueries");
 
-// create json web token
+// Create json web token
 const createAccessToken = (user) => {
   user.password = undefined;
   return jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, {
@@ -18,7 +18,7 @@ const createAccessToken = (user) => {
   });
 };
 
-// create refresh json web token
+// Create refresh json web token
 const createRefreshToken = (user) => {
   user.password = undefined;
   return jwt.sign({ user }, process.env.REFRESH_TOKEN_SECRET);
@@ -73,6 +73,24 @@ router.post("/score", async (req, res) => {
   } catch (error) {
     return res.status(500).json({ error: "Could not add score" });
   }
+});
+
+// Gets a single user
+router.post("/getuser", async (req, res) => {
+  const { body } = req;
+  try {
+    const user = await findUser(body.name);
+    return res.status(200).json({ name: user.name, id: user.id });
+  } catch (error) {
+    return res.status(500).json({ error: "User not found" });
+  }
+});
+
+// User logout
+router.post("/logout", async (req, res) => {
+  res.clearCookie("Access-Token");
+  res.clearCookie("Refresh-Token");
+  return res.status(200).json({ message: "success" });
 });
 
 module.exports = router;
