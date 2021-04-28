@@ -308,6 +308,11 @@ const checkUserExist = async (user) => {
   }
 };
 
+//Finds a user by its name
+const findUser = async (name) => {
+  return await User.findOne({ where: { name: name } });
+};
+
 // Adds user with score to scoreboard
 const addScore = async (user) => {
   await Scoreboard.create({
@@ -335,4 +340,5 @@ module.exports = {
   allSavedQuestions,
   addScore,
   checkUserExist,
+  findUser,
 };
