@@ -3,26 +3,13 @@ const { hashSync, compareSync, genSaltSync } = require("bcrypt");
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
+const { createAccessToken, createRefreshToken } = require("./cookiesUtils");
 const {
   createUser,
   addScore,
   checkUserExist,
   findUser,
 } = require("../DB/questionQueries");
-
-// Create json web token
-const createAccessToken = (user) => {
-  user.password = undefined;
-  return jwt.sign({ user }, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1d",
-  });
-};
-
-// Create refresh json web token
-const createRefreshToken = (user) => {
-  user.password = undefined;
-  return jwt.sign({ user }, process.env.REFRESH_TOKEN_SECRET);
-};
 
 router.post("/register", async (req, res) => {
   const { name, password } = req.body;
