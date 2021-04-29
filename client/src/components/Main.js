@@ -54,7 +54,11 @@ export default function Main() {
           </Route>
           <Route exact path="/home">
             {userExists ? (
-              <Home setUserExists={setUserExists} setNewUser={setNewUser} />
+              <Home
+                setUserExists={setUserExists}
+                setNewUser={setNewUser}
+                userName={userName}
+              />
             ) : (
               <Redirect to="/" />
             )}

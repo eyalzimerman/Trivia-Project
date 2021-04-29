@@ -9,6 +9,7 @@ import Grading from "./Grading";
 import LifeSaver from "./LifeSaver";
 import LinearDeterminate from "./LinearDeterminate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import Lose from "./Lose";
 
 export default function Game({ userName }) {
@@ -163,6 +164,9 @@ export default function Game({ userName }) {
 
   return (
     <div>
+      <div className="user-icon">
+        <AccountCircleRoundedIcon className="icon" /> {userName}
+      </div>
       {lives === 0 ? (
         <Lose gameScore={gameScore} userName={userName} />
       ) : (

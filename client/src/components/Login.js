@@ -28,18 +28,18 @@ export default function Login({
   };
 
   return (
-    <div>
-      <h1>Welcome to the best Trivia ever </h1>
+    <div id="login-container-div">
+      <h1 id="login-title">Welcome to the best Trivia ever </h1>
       <h2>Login into your account</h2>
       <input
-        className="username-input"
+        className="username-input-login"
         type="text"
         placeholder="Enter user name"
         onChange={(e) => userInputHandler(e.target.value)}
         required
       />
       <input
-        className="password-input"
+        className="password-input-login"
         type="password"
         placeholder="Enter password"
         onChange={(e) => passwordInputHandler(e.target.value)}
@@ -58,7 +58,11 @@ export default function Login({
         <span>Don't have a user yet? Register now </span>
       </div>
       <Link to="/register">
-        <Button className="register-button" variant="contained" color="primary">
+        <Button
+          className="login-register-button"
+          variant="contained"
+          color="primary"
+        >
           Register
         </Button>
       </Link>

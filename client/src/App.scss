@@ -26,6 +26,90 @@ body {
     text-decoration: none;
   }
 }
+#login-title {
+  text-align: center;
+  font-size: 5em;
+}
+h2 {
+  text-align: center;
+  font-size: 3em;
+}
+
+#login-container-div {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  align-items: center;
+  & a {
+    margin-top: 1em;
+    text-decoration: none;
+  }
+}
+
+.username-input-login {
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+.password-input-login {
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+.login-button {
+  width: fit-content;
+  margin-bottom: 2em;
+}
+#register-title {
+  text-align: center;
+  font-size: 5em;
+}
+#register-container {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  align-items: center;
+}
+#username-input-register {
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+#password-input-register {
+  width: fit-content;
+  width: fit-content;
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
 .username-input {
   margin-bottom: 1em;
   border-color: black;
@@ -35,6 +119,21 @@ body {
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
+}
+.logout-icon {
+  padding-left: 0.7em;
+}
+.user-icon {
+  display: flex;
+  position: fixed;
+  top: 2%;
+  right: 2%;
+  font-size: 1em;
+  text-align: center;
+  align-items: center;
+}
+.icon {
+  color: rgb(99, 102, 102);
 }
 
 .password-input {
@@ -195,6 +294,10 @@ body {
 }
 #lives {
   color: rgb(238, 119, 110);
+  display: flex;
+  position: fixed;
+  top: 14%;
+  right: 28%;
 }
 #life-saver-button {
   width: fit-content;

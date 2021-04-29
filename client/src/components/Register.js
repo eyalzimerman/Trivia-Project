@@ -34,18 +34,18 @@ export default function Register({
   };
 
   return (
-    <div>
-      <h1>Welcome to the best Trivia ever</h1>
+    <div id="register-container">
+      <h1 id="register-title">Welcome to the best Trivia ever</h1>
       <h2>Register Now!</h2>
       <input
-        className="username-input"
+        id="username-input-register"
         type="text"
         placeholder="Enter user name"
         onChange={(e) => userInputHandler(e.target.value)}
         required
       />
       <input
-        className="password-input"
+        id="password-input-register"
         type="password"
         placeholder="Enter password"
         onChange={(e) => passwordInputHandler(e.target.value)}
@@ -53,7 +53,7 @@ export default function Register({
       />
       <Button
         onClick={registerClick}
-        className="register-button"
+        id="register-button"
         variant="contained"
         color="primary"
       >
