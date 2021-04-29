@@ -36,22 +36,25 @@ export default function Main() {
               />
             )}
           </Route>
-          {newUser ? (
-            <Redirect to="/home" />
-          ) : (
-            <Route exact path="/register">
+          <Route exact path="/register">
+            {newUser ? (
+              <Redirect to="/home" />
+            ) : (
               <Register
                 userInputHandler={userInputHandler}
                 passwordInputHandler={passwordInputHandler}
                 userName={userName}
                 password={password}
                 setNewUser={setNewUser}
+                setUserName={setUserName}
+                setPassword={setPassword}
+                setUserExists={setUserExists}
               />
-            </Route>
-          )}
+            )}
+          </Route>
           <Route exact path="/home">
             {userExists ? (
-              <Home setUserExists={setUserExists} />
+              <Home setUserExists={setUserExists} setNewUser={setNewUser} />
             ) : (
               <Redirect to="/" />
             )}

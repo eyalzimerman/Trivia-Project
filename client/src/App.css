@@ -48,7 +48,18 @@ body {
   text-decoration: none;
 }
 
-#username-input {
+.username-input {
+  margin-bottom: 1em;
+  border-color: black;
+  border-width: 0.5px;
+  border-radius: 5px;
+  height: 3vh;
+  padding-left: 5px;
+  text-align: center;
+  background-color: rgba(144, 129, 129, 0.1);
+}
+
+.password-input {
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;

@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 export default function Register({
   userInputHandler,
@@ -9,22 +8,34 @@ export default function Register({
   userName,
   password,
   setNewUser,
+  setPassword,
+  setUserName,
+  setUserExists,
 }) {
+  useEffect(() => {
+    setPassword("");
+    setUserName("");
+  }, []);
   const registerClick = async () => {
     const user = {
       name: userName,
       password: password,
     };
+    if (userName === "" || password === "") {
+      return;
+    }
     try {
-      await axios.post("/api/user/register", user);
+      await axios.post("/api/users/register", user);
       setNewUser(true);
+      setUserExists(true);
     } catch (error) {
       console.log("Error signing up");
     }
   };
+
   return (
     <div>
-      <h1>Welcome to the best Trivia ever </h1>
+      <h1>Welcome to the best Trivia ever</h1>
       <h2>Register Now!</h2>
       <input
         className="username-input"
@@ -42,7 +53,7 @@ export default function Register({
       />
       <Button
         onClick={registerClick}
-        className="scoreboard-button"
+        className="register-button"
         variant="contained"
         color="primary"
       >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -15,8 +15,11 @@ export default function Login({
       name: userName,
       password: password,
     };
+    if (userName === "" || password === "") {
+      return;
+    }
     try {
-      await axios.post("/api/user/login", user);
+      await axios.post("/api/users/login", user);
       setUserExists(true);
       console.log("success logging in");
     } catch (error) {
@@ -45,7 +48,7 @@ export default function Login({
 
       <Button
         onClick={onClickHandler}
-        className="scoreboard-button"
+        className="login-button"
         variant="contained"
         color="primary"
       >
@@ -55,11 +58,7 @@ export default function Login({
         <span>Don't have a user yet? Register now </span>
       </div>
       <Link to="/register">
-        <Button
-          className="scoreboard-button"
-          variant="contained"
-          color="primary"
-        >
+        <Button className="register-button" variant="contained" color="primary">
           Register
         </Button>
       </Link>
