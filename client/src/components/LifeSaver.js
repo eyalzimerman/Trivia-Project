@@ -55,13 +55,6 @@ export default function LifeSaver({
 
   return (
     <div id="life-saver-container">
-      {lifeSaver > 0 ? (
-        <div className="life-saver-message">
-          you have {lifeSaver} life savers
-        </div>
-      ) : (
-        <div className="life-saver-message">You used two life savers</div>
-      )}
       {length === 4 && lifeSaver > 0 ? (
         <Button
           disabled={disableSaveButton}

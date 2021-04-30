@@ -4,6 +4,10 @@
 body {
   margin: 0 !important;
   padding: 0 !important;
+  background: #43c6ac;
+  background: -webkit-linear-gradient(to right, #f8ffae, #43c6ac);
+  background: linear-gradient(to right, #f8ffae, #43c6ac);
+  // background-color: #b2dfdb;
 }
 #home-container {
   display: flex;
@@ -15,7 +19,7 @@ body {
 }
 #main-title {
   text-align: center;
-  font-size: 10em;
+  font-size: 7em;
 }
 #login-container {
   display: flex;
@@ -135,6 +139,9 @@ h2 {
 .icon {
   color: rgb(99, 102, 102);
 }
+.main-game {
+  margin-top: 2.5em;
+}
 
 .password-input {
   margin-bottom: 1em;
@@ -234,7 +241,9 @@ h2 {
 }
 
 .option-div {
-  width: fit-content;
+  min-width: fit-content;
+  max-width: 37%;
+  align-self: center;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -249,10 +258,12 @@ h2 {
   font-size: 2em;
 }
 #end-game-user {
+  margin-top: 1em;
   text-align: center;
   font-size: 3em;
 }
 #game-score {
+  margin-top: 2em;
   text-align: center;
   font-size: 3em;
 }
@@ -295,11 +306,26 @@ h2 {
 #lives {
   color: rgb(238, 119, 110);
   display: flex;
-  position: fixed;
-  top: 14%;
-  right: 28%;
+  position: relative;
+  float: right;
+  top: 3vh;
 }
 #life-saver-button {
   width: fit-content;
+  margin: auto;
+}
+.life-saver-img {
+  height: 1em;
+  margin-left: 1%;
+}
+.life-saver-message {
+  display: flex;
+  position: relative;
+  float: left;
+  top: 3vh;
+}
+.timer-container {
+  width: 100%;
+  max-width: 45%;
   margin: auto;
 }

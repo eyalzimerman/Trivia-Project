@@ -5,6 +5,9 @@
 body {
   margin: 0 !important;
   padding: 0 !important;
+  background: #43c6ac;
+  background: -webkit-gradient(linear, left top, right top, from(#f8ffae), to(#43c6ac));
+  background: linear-gradient(to right, #f8ffae, #43c6ac);
 }
 
 #home-container {
@@ -27,7 +30,7 @@ body {
 
 #main-title {
   text-align: center;
-  font-size: 10em;
+  font-size: 7em;
 }
 
 #login-container {
@@ -201,6 +204,10 @@ h2 {
   color: #636666;
 }
 
+.main-game {
+  margin-top: 2.5em;
+}
+
 .password-input {
   margin-bottom: 1em;
   border-color: black;
@@ -325,9 +332,12 @@ h2 {
 }
 
 .option-div {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  max-width: 37%;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -350,11 +360,13 @@ h2 {
 }
 
 #end-game-user {
+  margin-top: 1em;
   text-align: center;
   font-size: 3em;
 }
 
 #game-score {
+  margin-top: 2em;
   text-align: center;
   font-size: 3em;
 }
@@ -423,15 +435,35 @@ h2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: fixed;
-  top: 14%;
-  right: 28%;
+  position: relative;
+  float: right;
+  top: 3vh;
 }
 
 #life-saver-button {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin: auto;
+}
+
+.life-saver-img {
+  height: 1em;
+  margin-left: 1%;
+}
+
+.life-saver-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  float: left;
+  top: 3vh;
+}
+
+.timer-container {
+  width: 100%;
+  max-width: 45%;
   margin: auto;
 }
 /*# sourceMappingURL=App.css.map */

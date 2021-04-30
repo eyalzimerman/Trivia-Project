@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 
-const useStyles = makeStyles({
+const ColorLinearProgress = withStyles({
   root: {
-    width: "45%",
+    width: "100%",
     margin: "auto",
   },
-});
+  colorPrimary: {
+    backgroundColor: "#b2dfdb",
+  },
+  barColorPrimary: {
+    backgroundColor: "#00695c",
+  },
+})(LinearProgress);
 
 export default function LinearDeterminate({
   counter,
@@ -15,14 +21,14 @@ export default function LinearDeterminate({
   progress,
   setProgress,
 }) {
-  const classes = useStyles();
+  const classes = withStyles();
   useEffect(() => {
     setProgress((prev) => prev - 100 / (prevCounter * 2));
   }, [counter, prevCounter]);
 
   return (
     <div className={classes.root}>
-      <LinearProgress
+      <ColorLinearProgress
         variant="determinate"
         value={progress}
         style={{ height: "2vh", borderRadius: "5px" }}

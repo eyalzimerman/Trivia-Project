@@ -11,6 +11,7 @@ import LinearDeterminate from "./LinearDeterminate";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
 import Lose from "./Lose";
+import lifeSaverImg from "../photos/life-saver.png";
 
 export default function Game({ userName }) {
   // States
@@ -168,22 +169,38 @@ export default function Game({ userName }) {
         <AccountCircleRoundedIcon className="icon" /> {userName}
       </div>
       {lives === 0 ? (
-        <Lose gameScore={gameScore} userName={userName} />
+        <Lose gameScore={gameScore} />
       ) : (
-        <div>
-          <div id="lives">
-            {Array.from(Array(lives).keys()).map((live, i) => (
-              <FavoriteIcon key={i} />
-            ))}
-          </div>
+        <div className="main-game">
           <Question question={question} />
-          <div id="timer">{Math.round(counter)}</div>
-          <LinearDeterminate
-            counter={counter}
-            prevCounter={prevCounter}
-            progress={progress}
-            setProgress={setProgress}
-          />
+          <div className="timer-container">
+            <div id="lives">
+              {Array.from(Array(lives).keys()).map((live, i) => (
+                <FavoriteIcon className="heart-icon" key={i} />
+              ))}
+            </div>
+            <div className="life-savers">
+              {lifeSaver > 0 ? (
+                <div className="life-saver-message">
+                  {Array.from(Array(lifeSaver).keys()).map((lives, i) => (
+                    <img
+                      className="life-saver-img"
+                      alt="life-saver"
+                      src={`${lifeSaverImg}`}
+                      key={`wheel-${i}`}
+                    />
+                  ))}
+                </div>
+              ) : null}
+            </div>
+            <div id="timer">{Math.round(counter)}</div>
+            <LinearDeterminate
+              counter={counter}
+              prevCounter={prevCounter}
+              progress={progress}
+              setProgress={setProgress}
+            />
+          </div>
           <LifeSaver
             question={question}
             setLifeSaver={setLifeSaver}
