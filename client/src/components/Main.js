@@ -20,7 +20,7 @@ export default function Main() {
     setPassword(value);
   };
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
@@ -72,6 +72,6 @@ export default function Main() {
           <Route path="/" component={NotFound} />
         </Switch>
       </BrowserRouter>
-    </div>
+    </>
   );
 }

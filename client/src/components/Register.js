@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
+import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 import axios from "axios";
 
 export default function Register({
@@ -12,6 +13,8 @@ export default function Register({
   setUserName,
   setUserExists,
 }) {
+  const [newRegister, setNewRegister] = useState(false);
+
   useEffect(() => {
     setPassword("");
     setUserName("");
@@ -28,8 +31,10 @@ export default function Register({
       await axios.post("/api/users/register", user);
       setNewUser(true);
       setUserExists(true);
+      setNewRegister(false);
     } catch (error) {
       console.log("Error signing up");
+      setNewRegister(true);
     }
   };
 
@@ -51,6 +56,11 @@ export default function Register({
         onChange={(e) => passwordInputHandler(e.target.value)}
         required
       />
+      {newRegister ? (
+        <div>
+          Username already exist <SentimentVeryDissatisfiedIcon />
+        </div>
+      ) : null}
       <Button
         onClick={registerClick}
         id="register-button"
