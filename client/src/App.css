@@ -6,9 +6,9 @@
 body {
   margin: 0 !important;
   padding: 0 !important;
-  background: #43c6ac;
-  background: -webkit-gradient(linear, left top, right top, from(#f8ffae), to(#43c6ac));
-  background: linear-gradient(to right, #f8ffae, #43c6ac);
+  background: #a1ffce;
+  background: -webkit-gradient(linear, left top, right top, from(#faffd1), to(#a1ffce));
+  background: linear-gradient(to right, #faffd1, #a1ffce);
 }
 
 #home-container {
@@ -31,7 +31,7 @@ body {
 
 #main-title {
   text-align: center;
-  font-size: 7em;
+  font-size: 5em;
 }
 
 #login-container {
@@ -59,7 +59,7 @@ body {
 
 h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 #login-container-div {
@@ -117,7 +117,6 @@ h2 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin-bottom: 2em;
 }
 
 #register-title {
@@ -476,7 +475,6 @@ h2 {
   overflow: hidden;
   border-right: 0.1em solid #554a4a;
   white-space: nowrap;
-  margin: 0 auto;
   -webkit-animation: typing 3s steps(80), blink-caret 1s infinite;
           animation: typing 3s steps(80), blink-caret 1s infinite;
 }
@@ -517,5 +515,21 @@ h2 {
   50% {
     border-color: #554a4a;
   }
+}
+
+.buttons-container {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=App.css.map */

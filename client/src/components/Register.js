@@ -40,7 +40,7 @@ export default function Register({
 
   return (
     <div id="register-container">
-      <h1 id="register-title">Welcome to the best Trivia ever</h1>
+      <h1 id="register-title">Countries Trivia</h1>
       <h2>Register Now!</h2>
       <input
         id="username-input-register"

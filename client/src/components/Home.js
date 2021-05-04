@@ -36,7 +36,7 @@ export default function Home({ setUserExists, setNewUser, userName }) {
       <div className="user-icon">
         <AccountCircleRoundedIcon className="icon" /> {userName}
       </div>
-      <h1 id="main-title">Trivia Game</h1>
+      <h1 id="main-title">Hello, {userName}</h1>
       <div id="login-container">
         <Link to="/game">
           <StyledButton className="start-game-button" variant="contained">

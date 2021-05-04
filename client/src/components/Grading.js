@@ -12,6 +12,7 @@ export default function Grading({
   questionNumber,
   setRatedNewQuestions,
   ratedNewQuestions,
+  isAnswerCorrect,
 }) {
   const [value, setValue] = useState(0);
 
@@ -68,7 +69,8 @@ export default function Grading({
       <div id="rating-container">
         <Box component="fieldset" mb={3} borderColor="transparent">
           <Typography id="rate-question" component="legend">
-            Rate Question:
+            {isAnswerCorrect}
+            <br /> Rate Question:
           </Typography>
           <Rating
             id="stars"

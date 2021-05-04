@@ -2,6 +2,22 @@ import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/core/styles";
+const StyledButton = withStyles({
+  root: {
+    backgroundColor: "#248b77",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    padding: "0 30px",
+    boxShadow: "0 6px 5px 2px rgba(112, 99, 102, 0.568)",
+    fontSize: "1em",
+    height: "fit-content",
+  },
+  label: {
+    textTransform: "capitalize",
+  },
+})(Button);
 
 export default function Login({
   userInputHandler,
@@ -32,7 +48,7 @@ export default function Login({
 
   return (
     <div id="login-container-div">
-      <h1 id="login-title">Welcome To Countries Trivia</h1>
+      <h1 id="login-title">Countries Trivia</h1>
       <h2>Login into your account</h2>
       <input
         className="username-input-login"
@@ -48,28 +64,24 @@ export default function Login({
         onChange={(e) => passwordInputHandler(e.target.value)}
         required
       />
-
-      <Button
-        onClick={onClickHandler}
-        className="login-button"
-        variant="contained"
-        color="primary"
-      >
-        Login
-      </Button>
+      <div className="buttons-container">
+        <StyledButton
+          onClick={onClickHandler}
+          className="login-button"
+          variant="contained"
+        >
+          Login
+        </StyledButton>
+        <Link to="/register">
+          <StyledButton className="login-register-button" variant="contained">
+            Register
+          </StyledButton>
+        </Link>
+      </div>
       {isUserExists ? <div>Username or password wrong</div> : null}
       <div>
         <span>Don't have a user yet? Register now </span>
       </div>
-      <Link to="/register">
-        <Button
-          className="login-register-button"
-          variant="contained"
-          color="primary"
-        >
-          Register
-        </Button>
-      </Link>
     </div>
   );
 }

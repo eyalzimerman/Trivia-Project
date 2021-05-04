@@ -5,9 +5,10 @@
 body {
   margin: 0 !important;
   padding: 0 !important;
-  background: #43c6ac;
-  background: -webkit-linear-gradient(to right, #f8ffae, #43c6ac);
-  background: linear-gradient(to right, #f8ffae, #43c6ac);
+  background: #a1ffce;
+  background: -webkit-linear-gradient(to right, #faffd1, #a1ffce);
+  background: linear-gradient(to right, #faffd1, #a1ffce);
+
   // background-color: #b2dfdb;
 }
 #home-container {
@@ -20,7 +21,7 @@ body {
 }
 #main-title {
   text-align: center;
-  font-size: 7em;
+  font-size: 5em;
 }
 #login-container {
   display: flex;
@@ -37,7 +38,7 @@ body {
 }
 h2 {
   text-align: center;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 #login-container-div {
@@ -78,7 +79,6 @@ h2 {
 }
 .login-button {
   width: fit-content;
-  margin-bottom: 2em;
 }
 #register-title {
   text-align: center;
@@ -338,7 +338,6 @@ h2 {
   overflow: hidden;
   border-right: 0.1em solid rgb(85, 74, 74);
   white-space: nowrap;
-  margin: 0 auto;
   animation: typing 3s steps(80), blink-caret 1s infinite;
 }
 
@@ -359,4 +358,12 @@ h2 {
   50% {
     border-color: rgb(85, 74, 74);
   }
+}
+
+.buttons-container {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }

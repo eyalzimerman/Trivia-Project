@@ -27,6 +27,7 @@ export default function Game({ userName }) {
   const [disableSaveButton, setDisableSaveButton] = useState(false);
   const [gameScore, setGameScore] = useState(0);
   const [lifeSaver, setLifeSaver] = useState(2);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState("");
 
   const [currentQuestionIdArray, setCurrentQuestionIdArray] = useState([]);
   const [allSavedQuestionsId, setAllSavedQuestionsId] = useState([]);
@@ -41,6 +42,7 @@ export default function Game({ userName }) {
       setIsRatingVisible(true);
       setDisableButtons(true);
       setDisableSaveButton(true);
+      setIsAnswerCorrect("Times Up!");
       setLives((prev) => prev - 1);
     } else {
       const timer =
@@ -71,6 +73,7 @@ export default function Game({ userName }) {
     const answer = decypter(question.answer);
     if (answer === value) {
       setDisableButtons(true);
+      setIsAnswerCorrect("Right!");
       const timeItTookToAnswer = prevCounter - counter;
       const score = Math.floor(
         (1 - timeItTookToAnswer / prevCounter) * 70 + 30
@@ -83,6 +86,7 @@ export default function Game({ userName }) {
       }
     } else {
       setDisableButtons(true);
+      setIsAnswerCorrect("Wrong!");
       setLives((prev) => prev - 1);
     }
     setCounter("");
@@ -232,6 +236,7 @@ export default function Game({ userName }) {
               questionNumber={questionNumber}
               setRatedNewQuestions={setRatedNewQuestions}
               ratedNewQuestions={ratedNewQuestions}
+              isAnswerCorrect={isAnswerCorrect}
             />
           ) : null}
         </div>
