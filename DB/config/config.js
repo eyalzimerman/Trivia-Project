@@ -4,7 +4,7 @@ module.exports = {
     username: "root",
     password: process.env.SQL_PASSWORD,
     database: process.env.DB_NAME,
-    host: "127.0.0.1",
+    host: process.env.HOST_IP,
     dialect: "mysql",
     logging: false,
   },
@@ -12,14 +12,16 @@ module.exports = {
     username: "root",
     password: process.env.SQL_PASSWORD,
     database: process.env.DB_NAME,
-    host: "127.0.0.1",
+    host: process.env.HOST_IP,
     dialect: "mysql",
   },
   production: {
     username: "root",
     password: process.env.SQL_PASSWORD,
     database: process.env.DB_NAME,
-    host: "127.0.0.1",
     dialect: "mysql",
+    dialectOptions: {
+      socketPath: `/cloudsql/${process.env.INSTANCE_CONNECTION_NAME}`,
+    },
   },
 };
