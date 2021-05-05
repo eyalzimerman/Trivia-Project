@@ -4,11 +4,16 @@
 }
 
 body {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0 !important;
   padding: 0 !important;
   background: #a1ffce;
   background: -webkit-gradient(linear, left top, right top, from(#faffd1), to(#a1ffce));
   background: linear-gradient(to right, #faffd1, #a1ffce);
+  background-repeat: no-repeat;
 }
 
 #home-container {
@@ -80,43 +85,31 @@ h2 {
 }
 
 #login-container-div a {
-  margin-top: 1em;
   text-decoration: none;
 }
 
 .username-input-login {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
 }
 
 .password-input-login {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
-}
-
-.login-button {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 #register-title {
@@ -142,30 +135,24 @@ h2 {
 }
 
 #username-input-register {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
 }
 
 #password-input-register {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
@@ -471,54 +458,8 @@ h2 {
   margin: auto;
 }
 
-#login-title {
-  overflow: hidden;
-  border-right: 0.1em solid #554a4a;
-  white-space: nowrap;
-  -webkit-animation: typing 3s steps(80), blink-caret 1s infinite;
-          animation: typing 3s steps(80), blink-caret 1s infinite;
-}
-
-@-webkit-keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #554a4a;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #554a4a;
-  }
-}
-
 .buttons-container {
-  width: 50%;
+  width: 51.5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,10 +467,33 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 1em;
+}
+
+.message-incorrect {
+  color: rgba(255, 0, 0, 0.616);
+  margin-top: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sad-icon {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-left: 0.2em;
 }
 /*# sourceMappingURL=App.css.map */

@@ -9,10 +9,10 @@ const StyledButton = withStyles({
     borderRadius: 3,
     border: 0,
     color: "white",
-    padding: "0 30px",
     boxShadow: "0 6px 5px 2px rgba(112, 99, 102, 0.568)",
     fontSize: "1em",
-    height: "fit-content",
+    height: "2em",
+    minWidth: "35%",
   },
   label: {
     textTransform: "capitalize",
@@ -64,6 +64,7 @@ export default function Login({
         onChange={(e) => passwordInputHandler(e.target.value)}
         required
       />
+      <div>Don't have a user yet? Register now</div>
       <div className="buttons-container">
         <StyledButton
           onClick={onClickHandler}
@@ -78,10 +79,11 @@ export default function Login({
           </StyledButton>
         </Link>
       </div>
-      {isUserExists ? <div>Username or password wrong</div> : null}
-      <div>
-        <span>Don't have a user yet? Register now </span>
-      </div>
+      {isUserExists ? (
+        <div className="message-incorrect">
+          Username or Password are incorrect !
+        </div>
+      ) : null}
     </div>
   );
 }

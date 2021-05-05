@@ -3,12 +3,17 @@
   font-family: "Ubuntu", sans-serif;
 }
 body {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100%;
+  width: 100%;
   margin: 0 !important;
   padding: 0 !important;
   background: #a1ffce;
   background: -webkit-linear-gradient(to right, #faffd1, #a1ffce);
   background: linear-gradient(to right, #faffd1, #a1ffce);
-
+  // background-size: cover;
+  background-repeat: no-repeat;
   // background-color: #b2dfdb;
 }
 #home-container {
@@ -48,37 +53,32 @@ h2 {
   margin: auto;
   align-items: center;
   & a {
-    margin-top: 1em;
     text-decoration: none;
   }
 }
 
 .username-input-login {
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
 }
 
 .password-input-login {
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
-}
-.login-button {
-  width: fit-content;
 }
 #register-title {
   text-align: center;
@@ -92,25 +92,23 @@ h2 {
   align-items: center;
 }
 #username-input-register {
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
 }
 #password-input-register {
-  width: fit-content;
-  width: fit-content;
+  width: 50%;
   margin-bottom: 1em;
   border-color: black;
   border-width: 0.5px;
   border-radius: 5px;
-  height: 3vh;
+  height: 2em;
   padding-left: 5px;
   text-align: center;
   background-color: rgba(144, 129, 129, 0.1);
@@ -334,36 +332,24 @@ h2 {
   margin: auto;
 }
 
-#login-title {
-  overflow: hidden;
-  border-right: 0.1em solid rgb(85, 74, 74);
-  white-space: nowrap;
-  animation: typing 3s steps(80), blink-caret 1s infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: rgb(85, 74, 74);
-  }
-}
-
 .buttons-container {
-  width: 50%;
+  width: 51.5%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 1em;
+}
+
+.message-incorrect {
+  color: rgba(255, 0, 0, 0.616);
+  margin-top: 1em;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.sad-icon {
+  align-self: flex-end;
+  margin-left: 0.2em;
 }

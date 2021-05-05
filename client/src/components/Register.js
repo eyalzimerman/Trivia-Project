@@ -2,6 +2,22 @@ import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import SentimentVeryDissatisfiedIcon from "@material-ui/icons/SentimentVeryDissatisfied";
 import axios from "axios";
+import { withStyles } from "@material-ui/core/styles";
+const StyledButton = withStyles({
+  root: {
+    backgroundColor: "#248b77",
+    borderRadius: 3,
+    border: 0,
+    color: "white",
+    boxShadow: "0 6px 5px 2px rgba(112, 99, 102, 0.568)",
+    fontSize: "1em",
+    height: "2em",
+    minWidth: "20%",
+  },
+  label: {
+    textTransform: "capitalize",
+  },
+})(Button);
 
 export default function Register({
   userInputHandler,
@@ -56,19 +72,19 @@ export default function Register({
         onChange={(e) => passwordInputHandler(e.target.value)}
         required
       />
-      {newRegister ? (
-        <div>
-          Username already exist <SentimentVeryDissatisfiedIcon />
-        </div>
-      ) : null}
-      <Button
+      <StyledButton
         onClick={registerClick}
         id="register-button"
         variant="contained"
-        color="primary"
       >
         Register
-      </Button>
+      </StyledButton>
+      {newRegister ? (
+        <div className="message-incorrect">
+          Username already exist{" "}
+          <SentimentVeryDissatisfiedIcon className="sad-icon" />
+        </div>
+      ) : null}
     </div>
   );
 }
